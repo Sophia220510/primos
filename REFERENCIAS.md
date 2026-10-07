@@ -6,7 +6,7 @@ O acesso direto de busca ao Instagram falhou, mas o perfil e as publicações p�
 
 [Perfil oficial](https://www.instagram.com/cromeacao_primos/): Cromeação Primos LTDA., desde 2002, cromação e niquelação, menção a ferro e zamac. A bio contém o link https://wa.me/5511914935874, usado como WhatsApp atual. Legendas de 2023 contêm outro telefone, que não foi adotado.
 
-O símbolo CP é real, obtido da imagem de perfil (`00.webp`). A arte da marca publicada em [05/04/2026](https://www.instagram.com/cromeacao_primos/p/DWxNdeajXNG/) é `04.webp`, exibida na página da empresa. A marca contém prata, preto e um detalhe azul; a composição do site usa grafite e prata, com um acento verde inspirado nas gancheiras reais. Esse acento é uma decisão de design da prévia, não uma cor oficial declarada.
+O símbolo CP é real, obtido da imagem de perfil (`00.webp`). A arte da marca publicada em [05/04/2026](https://www.instagram.com/cromeacao_primos/p/DWxNdeajXNG/) é `04.webp`, exibida na página da empresa. A marca contém prata, preto e um detalhe azul; a composição do site segue prata, preto/grafite e azul, com áreas claras de leitura. As tonalidades foram adaptadas ao contraste da interface a partir da marca publicada. As gancheiras verdes permanecem nas fotografias reais, mas não definem a paleta do site.
 
 ## Fotografias utilizadas
 

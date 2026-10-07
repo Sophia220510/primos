@@ -1,6 +1,6 @@
 # Cromeação Primos — apresentação comercial
 
-Site em React, TypeScript e Vite, com oito páginas navegáveis: início, serviços, cromação, niquelação, trabalhos, processo, empresa e contato. Direção industrial em grafite e prata, acento verde inspirado nas gancheiras observadas, tipografia editorial e fotografias reais. O logo é o publicado no perfil oficial.
+Site em React, TypeScript e Vite, com oito páginas navegáveis: início, serviços, cromação, niquelação, trabalhos, processo, empresa e contato. Identidade em prata, preto/grafite e azul, derivada do logo oficial, com áreas claras de leitura, tipografia editorial e fotografias reais. O logo é o publicado no perfil oficial.
 
 ## Executar
 
@@ -9,7 +9,7 @@ npm ci
 npm run dev -- --port 5175
 ```
 
-Prévia local: http://127.0.0.1:5175/. Build e TypeScript: `npm run build`. As páginas usam URLs como `#/trabalhos`, compatíveis com hospedagem estática. Não foi feita publicação em domínio público. Noindex e robots.txt estão configurados.
+Prévia local: http://127.0.0.1:5175/. Build e TypeScript: `npm run build`. A entrada padrão é `#/inicio`, com “Início” destacado no menu. As páginas usam URLs como `#/trabalhos`, compatíveis com hospedagem estática. Serviços detalhados pertencem ao grupo “Serviços” e possuem breadcrumbs para retornar. Não foi feita publicação em domínio público. Noindex e robots.txt estão configurados.
 
 ## Conteúdo e manutenção
 
@@ -23,7 +23,11 @@ A galeria reúne cinco fotografias e cinco frames de vídeos, identificados como
 
 ## Contato
 
-WhatsApp atual da bio oficial: +55 11 91493-5874. O formulário gera uma mensagem codificada para o canal, mostra um resumo e permite copiá-lo. O envio e o anexo de fotos são feitos na conversa pelo visitante. O formulário não transmite dados a backend, nem simula envio concluído.
+WhatsApp atual da bio oficial: +55 11 91493-5874. O formulário gera uma mensagem codificada para o canal, mostra um resumo e permite copiá-lo. É possível conversar diretamente pelo WhatsApp sem preencher o formulário. Material e quantidade podem ficar como “não sei” e “a informar”; apenas nome e descrição são obrigatórios. O envio e o anexo de fotos são feitos na conversa pelo visitante. O formulário não transmite dados a backend, nem simula envio concluído.
+
+## Jornada do visitante
+
+Menu principal: Início, Serviços, Trabalhos, A empresa e Pedir orçamento. A home apresenta a atuação, explica os serviços, mostra três exemplos reais e explica como consultar a equipe. Processo e demais detalhes ficam nas páginas internas. O teste percorre a jornada de pesquisa, entrada no orçamento e consulta sem quantidade conhecida.
 
 ## Movimento
 

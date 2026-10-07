@@ -1,23 +1,237 @@
-export type Photo = { id:string; file:string; title:string; category:string; description:string; alt:string; source:string; date:string; frame?:boolean; width:number; height:number };
-export const company = {
- name:'Cromeação Primos',legalName:'Cromeação Primos LTDA.',since:'2002',instagram:'https://www.instagram.com/cromeacao_primos/',whatsapp:'5511914935874',phone:'(11) 91493-5874',
- materials:[{name:'Ferro',text:'Material mencionado no perfil da empresa. A geometria, as condições da superfície e a aplicação orientam a consulta.'},{name:'Zamac',text:'Uma liga metálica à base de zinco, também mencionada pela empresa. Cada peça precisa ser avaliada individualmente.'}],
- services:[{slug:'cromacao',name:'Cromação',label:'Uma nova expressão para a superfície.',text:'Revestimento da superfície com cromo para compor o acabamento da peça. O resultado depende do material, do processo e da aplicação.',image:'12'},{slug:'niquelacao',name:'Niquelação',label:'O acabamento começa em cada camada.',text:'Revestimento de superfície com níquel, utilizado em acabamentos metálicos e, conforme o processo, como base para outros revestimentos.',image:'02'}],
- faqs:[['Vocês fabricam peças?','A atuação divulgada pela Cromeação Primos é o tratamento e o revestimento de superfícies por cromação e niquelação. Para consultar sua peça, fale com a equipe.'],['Qual acabamento é indicado para minha peça?','Depende do material, da geometria, do estado da superfície e do uso da peça. Envie fotos e explique a aplicação para receber orientação da equipe.'],['Quais materiais podem ser atendidos?','O perfil menciona ferro e zamac. Há também um registro histórico de mesas de guidão de alumínio. A aceitação atual de qualquer material e peça precisa ser consultada.'],['Existe quantidade mínima ou prazo fixo?','Quantidade mínima, prazo e viabilidade precisam ser confirmados diretamente com a empresa. Informe a quantidade e as medidas aproximadas no pedido.'],['Posso enviar uma peça usada?','O atendimento a peças usadas ou restauração precisa ser confirmado pela equipe. Compartilhe fotos que mostrem o estado atual da peça antes de combinar o serviço.']],
- pending:['Endereço e horários atuais','Quantidade mínima e atendimento a pessoas físicas','Dimensões e materiais aceitos atualmente','Peças usadas e restauração','Prazos, garantias e demais acabamentos','Aprovação das fotos para publicação definitiva'],
+export type Photo = {
+  id: string;
+  file: string;
+  title: string;
+  category: string;
+  description: string;
+  alt: string;
+  source: string;
+  date: string;
+  frame?: boolean;
+  width: number;
+  height: number;
 };
-export const photos:Photo[] = [
- {id:'12',file:'12.webp',title:'Superfícies que refletem',category:'Peças',description:'Peças com superfície refletiva, fotografadas nas gancheiras. Registro do perfil oficial.',alt:'Duas peças metálicas ovais e refletivas suspensas em gancheiras verdes no ambiente da empresa.',source:'https://www.instagram.com/cromeacao_primos/p/CpSYP1trOH6/',date:'02 mar 2023',width:1084,height:1356},
- {id:'11',file:'11.webp',title:'Torneiras slim',category:'Peças',description:'Torneiras slim apresentadas pela empresa, suspensas nas gancheiras e reunidas após o trabalho.',alt:'Torneiras metálicas alongadas suspensas em gancheiras verdes, com outras peças organizadas abaixo.',source:'https://www.instagram.com/cromeacao_primos/p/CpSY7I1rjti/',date:'02 mar 2023',width:1100,height:1374},
- {id:'05',file:'05.webp',title:'Porcas cromadas',category:'Peças',description:'Porcas de carro cromadas, conforme a legenda da publicação original. Consulte a equipe sobre a sua peça.',alt:'Porcas com acabamento cromado dispostas sobre um tecido, mostrando seus formatos e reflexos.',source:'https://www.instagram.com/cromeacao_primos/p/CqBYSXOJGR0/',date:'20 mar 2023',width:1100,height:1375},
- {id:'08',file:'08.webp',title:'Mesas de guidão',category:'Peças',description:'Registro de mesas de guidão de alumínio publicado em 2023. Consulte a aceitação atual da sua peça.',alt:'Mesas de guidão metálicas presas em uma estrutura de gancheiras verdes.',source:'https://www.instagram.com/cromeacao_primos/p/CpVF4c3rof0/',date:'03 mar 2023',width:1100,height:1375},
- {id:'06',file:'06.webp',title:'Depois dos banhos',category:'Processo',description:'A própria empresa apresenta as etapas após os banhos: gancheira, secagem e embalagem.',alt:'Montagem de fotografias da empresa mostrando peças na gancheira, na secagem e embaladas.',source:'https://www.instagram.com/cromeacao_primos/p/Cp2w_BFOvtm/',date:'16 mar 2023',width:1100,height:1374},
- {id:'01',file:'01.webp',title:'Válvulas americanas',category:'Peças',description:'Frame de um vídeo do perfil oficial mostrando válvulas americanas durante o processo de cromação.',alt:'Válvulas metálicas circulares organizadas em gancheiras, em frame de vídeo publicado pela empresa.',source:'https://www.instagram.com/cromeacao_primos/reel/Dd1iLLShF4i/',date:'28 set 2026',frame:true,width:361,height:640},
- {id:'02',file:'02.webp',title:'Acabamento de parafusos',category:'Peças',description:'Frame do vídeo em que a empresa apresenta parafusos e seus acabamentos. Nenhuma comparação artificial foi criada.',alt:'Conjunto de pequenos parafusos metálicos mostrado em um vídeo da empresa.',source:'https://www.instagram.com/cromeacao_primos/reel/Da3tDUgRYcV/',date:'16 jul 2026',frame:true,width:360,height:640},
- {id:'09',file:'09.webp',title:'Limpeza e inspeção',category:'Processo',description:'Registro da limpeza e inspeção de hastes de panela de pressão, conforme a legenda do vídeo.',alt:'Hastes metálicas dispostas lado a lado durante limpeza e inspeção, em frame de vídeo da empresa.',source:'https://www.instagram.com/cromeacao_primos/reel/CpVE80cs42p/',date:'03 mar 2023',frame:true,width:360,height:640},
- {id:'10',file:'10.webp',title:'Metais sanitários',category:'Peças',description:'Peças de metais sanitários organizadas em caixas, apresentadas em vídeo no perfil oficial.',alt:'Caixas com peças metálicas pequenas no ambiente de trabalho da empresa.',source:'https://www.instagram.com/cromeacao_primos/reel/CpU1wznPGz2/',date:'03 mar 2023',frame:true,width:360,height:640},
- {id:'07',file:'07.webp',title:'Na produção',category:'Processo',description:'Frame de uma publicação que mostra peças suspensas no ambiente de produção.',alt:'Peças metálicas alongadas suspensas em uma gancheira verde no ambiente de produção.',source:'https://www.instagram.com/cromeacao_primos/reel/Cpcn00cAWF2/',date:'06 mar 2023',frame:true,width:360,height:640},
+export const company = {
+  name: "Cromeação Primos",
+  legalName: "Cromeação Primos LTDA.",
+  since: "2002",
+  instagram: "https://www.instagram.com/cromeacao_primos/",
+  whatsapp: "5511914935874",
+  phone: "(11) 91493-5874",
+  materials: [
+    {
+      name: "Ferro",
+      text: "Material mencionado no perfil da empresa. A geometria, as condições da superfície e a aplicação orientam a consulta.",
+    },
+    {
+      name: "Zamac",
+      text: "Uma liga metálica à base de zinco, também mencionada pela empresa. Cada peça precisa ser avaliada individualmente.",
+    },
+  ],
+  services: [
+    {
+      slug: "cromacao",
+      name: "Cromação",
+      label: "Uma nova expressão para a superfície.",
+      text: "Revestimento da superfície com cromo para compor o acabamento da peça. O resultado depende do material, do processo e da aplicação.",
+      image: "12",
+    },
+    {
+      slug: "niquelacao",
+      name: "Niquelação",
+      label: "O acabamento começa em cada camada.",
+      text: "Revestimento de superfície com níquel, utilizado em acabamentos metálicos e, conforme o processo, como base para outros revestimentos.",
+      image: "02",
+    },
+  ],
+  faqs: [
+    [
+      "Vocês fabricam peças?",
+      "A atuação divulgada pela Cromeação Primos é o tratamento e o revestimento de superfícies por cromação e niquelação. Para consultar sua peça, fale com a equipe.",
+    ],
+    [
+      "Qual acabamento é indicado para minha peça?",
+      "Depende do material, da geometria, do estado da superfície e do uso da peça. Envie fotos e explique a aplicação para receber orientação da equipe.",
+    ],
+    [
+      "Quais materiais podem ser atendidos?",
+      "O perfil menciona ferro e zamac. Há também um registro histórico de mesas de guidão de alumínio. A aceitação atual de qualquer material e peça precisa ser consultada.",
+    ],
+    [
+      "Existe quantidade mínima ou prazo fixo?",
+      "Quantidade mínima, prazo e viabilidade precisam ser confirmados diretamente com a empresa. Informe a quantidade e as medidas aproximadas no pedido.",
+    ],
+    [
+      "Posso enviar uma peça usada?",
+      "O atendimento a peças usadas ou restauração precisa ser confirmado pela equipe. Compartilhe fotos que mostrem o estado atual da peça antes de combinar o serviço.",
+    ],
+  ],
+  pending: [
+    "Endereço e horários atuais",
+    "Quantidade mínima e atendimento a pessoas físicas",
+    "Dimensões e materiais aceitos atualmente",
+    "Peças usadas e restauração",
+    "Prazos, garantias e demais acabamentos",
+    "Aprovação das fotos para publicação definitiva",
+  ],
+};
+export const photos: Photo[] = [
+  {
+    id: "12",
+    file: "12.webp",
+    title: "Superfícies que refletem",
+    category: "Peças",
+    description:
+      "Peças com superfície refletiva, fotografadas nas gancheiras. Registro do perfil oficial.",
+    alt: "Duas peças metálicas ovais e refletivas suspensas em gancheiras verdes no ambiente da empresa.",
+    source: "https://www.instagram.com/cromeacao_primos/p/CpSYP1trOH6/",
+    date: "02 mar 2023",
+    width: 1084,
+    height: 1356,
+  },
+  {
+    id: "11",
+    file: "11.webp",
+    title: "Torneiras slim",
+    category: "Peças",
+    description:
+      "Torneiras slim apresentadas pela empresa, suspensas nas gancheiras e reunidas após o trabalho.",
+    alt: "Torneiras metálicas alongadas suspensas em gancheiras verdes, com outras peças organizadas abaixo.",
+    source: "https://www.instagram.com/cromeacao_primos/p/CpSY7I1rjti/",
+    date: "02 mar 2023",
+    width: 1100,
+    height: 1374,
+  },
+  {
+    id: "05",
+    file: "05.webp",
+    title: "Porcas cromadas",
+    category: "Peças",
+    description:
+      "Porcas de carro cromadas, conforme a legenda da publicação original. Consulte a equipe sobre a sua peça.",
+    alt: "Porcas com acabamento cromado dispostas sobre um tecido, mostrando seus formatos e reflexos.",
+    source: "https://www.instagram.com/cromeacao_primos/p/CqBYSXOJGR0/",
+    date: "20 mar 2023",
+    width: 1100,
+    height: 1375,
+  },
+  {
+    id: "08",
+    file: "08.webp",
+    title: "Mesas de guidão",
+    category: "Peças",
+    description:
+      "Registro de mesas de guidão de alumínio publicado em 2023. Consulte a aceitação atual da sua peça.",
+    alt: "Mesas de guidão metálicas presas em uma estrutura de gancheiras verdes.",
+    source: "https://www.instagram.com/cromeacao_primos/p/CpVF4c3rof0/",
+    date: "03 mar 2023",
+    width: 1100,
+    height: 1375,
+  },
+  {
+    id: "06",
+    file: "06.webp",
+    title: "Depois dos banhos",
+    category: "Processo",
+    description:
+      "A própria empresa apresenta as etapas após os banhos: gancheira, secagem e embalagem.",
+    alt: "Montagem de fotografias da empresa mostrando peças na gancheira, na secagem e embaladas.",
+    source: "https://www.instagram.com/cromeacao_primos/p/Cp2w_BFOvtm/",
+    date: "16 mar 2023",
+    width: 1100,
+    height: 1374,
+  },
+  {
+    id: "01",
+    file: "01.webp",
+    title: "Válvulas americanas",
+    category: "Peças",
+    description:
+      "Frame de um vídeo do perfil oficial mostrando válvulas americanas durante o processo de cromação.",
+    alt: "Válvulas metálicas circulares organizadas em gancheiras, em frame de vídeo publicado pela empresa.",
+    source: "https://www.instagram.com/cromeacao_primos/reel/Dd1iLLShF4i/",
+    date: "28 set 2026",
+    frame: true,
+    width: 361,
+    height: 640,
+  },
+  {
+    id: "02",
+    file: "02.webp",
+    title: "Acabamento de parafusos",
+    category: "Peças",
+    description:
+      "Frame do vídeo em que a empresa apresenta parafusos e seus acabamentos. Nenhuma comparação artificial foi criada.",
+    alt: "Conjunto de pequenos parafusos metálicos mostrado em um vídeo da empresa.",
+    source: "https://www.instagram.com/cromeacao_primos/reel/Da3tDUgRYcV/",
+    date: "16 jul 2026",
+    frame: true,
+    width: 360,
+    height: 640,
+  },
+  {
+    id: "09",
+    file: "09.webp",
+    title: "Limpeza e inspeção",
+    category: "Processo",
+    description:
+      "Registro da limpeza e inspeção de hastes de panela de pressão, conforme a legenda do vídeo.",
+    alt: "Hastes metálicas dispostas lado a lado durante limpeza e inspeção, em frame de vídeo da empresa.",
+    source: "https://www.instagram.com/cromeacao_primos/reel/CpVE80cs42p/",
+    date: "03 mar 2023",
+    frame: true,
+    width: 360,
+    height: 640,
+  },
+  {
+    id: "10",
+    file: "10.webp",
+    title: "Metais sanitários",
+    category: "Peças",
+    description:
+      "Peças de metais sanitários organizadas em caixas, apresentadas em vídeo no perfil oficial.",
+    alt: "Caixas com peças metálicas pequenas no ambiente de trabalho da empresa.",
+    source: "https://www.instagram.com/cromeacao_primos/reel/CpU1wznPGz2/",
+    date: "03 mar 2023",
+    frame: true,
+    width: 360,
+    height: 640,
+  },
+  {
+    id: "07",
+    file: "07.webp",
+    title: "Na produção",
+    category: "Processo",
+    description:
+      "Frame de uma publicação que mostra peças suspensas no ambiente de produção.",
+    alt: "Peças metálicas alongadas suspensas em uma gancheira verde no ambiente de produção.",
+    source: "https://www.instagram.com/cromeacao_primos/reel/Cpcn00cAWF2/",
+    date: "06 mar 2023",
+    frame: true,
+    width: 360,
+    height: 640,
+  },
 ];
-export const processSteps=[{number:'01',title:'Peças nas gancheiras',text:'As publicações mostram peças suspensas em estruturas de gancheiras durante o trabalho.',image:'07'},{number:'02',title:'Após os banhos',text:'A empresa registra a passagem das peças pela gancheira, secagem e embalagem após os banhos.',image:'06'},{number:'03',title:'Limpeza e inspeção',text:'Um vídeo mostra a limpeza e inspeção de hastes de panela de pressão.',image:'09'}];
-export const asset=(file:string)=>`${import.meta.env.BASE_URL}media/instagram/${file}`;
-export const photoById=(id:string)=>photos.find(p=>p.id===id)!;
+export const processSteps = [
+  {
+    number: "01",
+    title: "Peças nas gancheiras",
+    text: "As publicações mostram peças suspensas em estruturas de gancheiras durante o trabalho.",
+    image: "07",
+  },
+  {
+    number: "02",
+    title: "Após os banhos",
+    text: "A empresa registra a passagem das peças pela gancheira, secagem e embalagem após os banhos.",
+    image: "06",
+  },
+  {
+    number: "03",
+    title: "Limpeza e inspeção",
+    text: "Um vídeo mostra a limpeza e inspeção de hastes de panela de pressão.",
+    image: "09",
+  },
+];
+export const asset = (file: string) =>
+  `${import.meta.env.BASE_URL}media/instagram/${file}`;
+export const photoById = (id: string) => photos.find((p) => p.id === id)!;
