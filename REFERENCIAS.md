@@ -1,34 +1,52 @@
-# Referências de conteúdo e mídia
+# Referências verificadas — 07/10/2026
 
-## Fonte de conteúdo
+O acesso direto de busca ao Instagram falhou, mas o perfil e as publicações públicas abriram no Chromium/Playwright sem autenticação. As imagens exibidas foram baixadas e convertidas para WebP. Não houve tentativa de contornar login. Fotos maiores foram obtidas das versões que o próprio navegador carregou nos posts.
 
-Briefing fornecido pelo usuário em 06/10/2026: Cromeação Primos LTDA., atuação desde 2002, cromação, niquelação e menção a ferro e zamac. Essas informações foram fornecidas como confirmadas pelo usuário; não foi possível verificá-las independentemente.
+## Empresa e contato
 
-Perfil oficial indicado: https://www.instagram.com/cromeacao_primos/
+[Perfil oficial](https://www.instagram.com/cromeacao_primos/): Cromeação Primos LTDA., desde 2002, cromação e niquelação, menção a ferro e zamac. A bio contém o link https://wa.me/5511914935874, usado como WhatsApp atual. Legendas de 2023 contêm outro telefone, que não foi adotado.
 
-Tentativa de consulta em 06/10/2026 retornou bloqueio de acesso (fetch throttled). Busca pelo perfil não retornou referências úteis. Nenhuma publicação ou fotografia foi visualizada. Não foi contornada autenticação, nem foram utilizados contatos de diretórios.
+O símbolo CP é real, obtido da imagem de perfil (`00.webp`). A arte da marca publicada em [05/04/2026](https://www.instagram.com/cromeacao_primos/p/DWxNdeajXNG/) é `04.webp`, exibida na página da empresa. A marca contém prata, preto e um detalhe azul; a composição do site usa grafite e prata, com um acento verde inspirado nas gancheiras reais. Esse acento é uma decisão de design da prévia, não uma cor oficial declarada.
 
-## Fotografias reais utilizadas
+## Fotografias utilizadas
 
-Nenhuma. Fotos da empresa, peças reais, instalações e identidade visual permanecem pendentes.
+| Arquivo em public/media/instagram | Registro | Fonte |
+| --- | --- | --- |
+| 12.webp | Peças ovais e refletivas nas gancheiras, 02/03/2023; sem legenda específica | [Post original](https://www.instagram.com/cromeacao_primos/p/CpSYP1trOH6/) |
+| 11.webp | Torneiras slim, 02/03/2023 | [Post original](https://www.instagram.com/cromeacao_primos/p/CpSY7I1rjti/) |
+| 05.webp | Porcas de carro cromadas, 20/03/2023 | [Post original](https://www.instagram.com/cromeacao_primos/p/CqBYSXOJGR0/) |
+| 08.webp | Mesas de guidão de alumínio, 03/03/2023 | [Post original](https://www.instagram.com/cromeacao_primos/p/CpVF4c3rof0/) |
+| 06.webp | Montagem: gancheira, secagem e embalagem após os banhos, 16/03/2023 | [Post original](https://www.instagram.com/cromeacao_primos/p/Cp2w_BFOvtm/) |
 
-## Imagem ilustrativa
+O registro de alumínio é histórico e foi descrito como tal. Não implica atendimento atual irrestrito a alumínio. Os registros de porcas e guidões não foram generalizados para anunciar restauração automotiva, rodas ou outros serviços.
 
-Arquivo: `public/media/metal-study.webp`, 1536 × 1024. Gerado com a ferramenta image_gen em 06/10/2026 e convertido para WebP. Um único estudo genérico de acabamento metálico, reutilizado no hero e na galeria. Não reproduz peças verificadas da empresa e não constitui comprovação de trabalhos realizados. A interface o identifica como imagem ilustrativa criada com IA.
+## Frames de vídeos utilizados
 
-Prompt de geração:
+São imagens estáticas de vídeos do perfil oficial, identificadas na galeria. Não são vídeos gerados ou fotos apresentadas como fotografias de ensaio.
 
-> Use case: product-mockup. Asset: editorial industrial website photograph, landscape 1536x1024. Create a generic illustrative study of metallic surface finishing, not a real company portfolio. Three simple plausible chrome-plated metal pieces: a smooth bent tubular U handle, a thick circular washer, and a small cylindrical sleeve, carefully arranged on a matte warm light gray studio plinth. Large close-up, tactile polished silver surfaces, realistic coherent geometry, controlled softbox reflections with dark bands, warm side sunlight, fine shadows. Sophisticated industrial materials catalogue photography, restrained monochrome, exquisite detail, plenty of breathing room. No text, no logos, no factory, no people, no elaborate machinery.
+| Arquivo | Registro | Fonte |
+| --- | --- | --- |
+| 01.webp | Válvulas americanas, 28/09/2026 | [Vídeo original](https://www.instagram.com/cromeacao_primos/reel/Dd1iLLShF4i/) |
+| 02.webp | Acabamento de parafusos, 16/07/2026 | [Vídeo original](https://www.instagram.com/cromeacao_primos/reel/Da3tDUgRYcV/) |
+| 09.webp | Limpeza e inspeção de hastes de panela de pressão, 03/03/2023 | [Vídeo original](https://www.instagram.com/cromeacao_primos/reel/CpVE80cs42p/) |
+| 10.webp | Metais sanitários organizados em caixas, 03/03/2023 | [Vídeo original](https://www.instagram.com/cromeacao_primos/reel/CpU1wznPGz2/) |
+| 07.webp | Peças na produção, 06/03/2023 | [Vídeo original](https://www.instagram.com/cromeacao_primos/reel/Cpcn00cAWF2/) |
 
-## Direção provisória
+As miniaturas têm resolução inferior às fotos. Não foram ampliadas artificialmente para simular detalhes inexistentes. No modal, o visitante pode consultar a fonte original.
 
-Prata, branco quente, grafite e acento oliva discreto; tipografia Space Grotesk e Manrope. Paleta e nome diagramado são uma proposta de apresentação, não identidade oficial verificada. Não foi criado símbolo de marca.
+## Conteúdo do processo
 
-## Pendências da reunião
+As legendas de 16/03/2023 e 03/03/2023 fundamentam as menções a gancheiras, secagem, embalagem, limpeza e inspeção. Não foi criada uma sequência técnica completa como se tivesse sido confirmada pela empresa. As condições da peça e a sequência do tratamento devem ser consultadas.
 
-- Logo, cores, fotos reais e autorização de uso.
-- Telefone, WhatsApp, endereço atual e horários.
-- Todos os materiais aceitos, tipos e dimensões de peças.
-- Pessoas físicas ou somente empresas; quantidade mínima.
-- Peças usadas e restauração.
-- Outros acabamentos, prazos, garantias, capacidade produtiva e certificações.
+## Imagens de IA
+
+Nenhuma é exibida na versão atual. O estudo ilustrativo da versão anterior foi substituído por registros reais; seu prompt permanece recuperável no histórico Git, commit f17c8fa.
+
+## Pendências
+
+- Aprovação da empresa para uso definitivo das fotos e da apresentação.
+- Endereço e horários atuais.
+- Atendimento a pessoas físicas e quantidade mínima.
+- Materiais, formatos e dimensões aceitos atualmente.
+- Peças usadas, restauração e outros acabamentos.
+- Prazos, garantias, capacidade produtiva e certificações.

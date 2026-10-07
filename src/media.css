@@ -1,8 +1,0 @@
-/* Keep the complete geometry of the illustrative pieces visible at every width. */
-.hero-figure img { object-fit: contain; background: #d8d5cd; }
-.gallery-button { background: #d8d5cd; }
-.gallery-button img { height: auto; max-height: 620px; object-fit: contain; }
-@media (max-width: 760px) {
-  .hero-figure img { height: auto; aspect-ratio: 3 / 2; }
-  .gallery-button img { height: auto; aspect-ratio: 3 / 2; }
-}

@@ -3,3 +3,4 @@ dist/
 .playwright/
 *.tsbuildinfo
 *.log
+/public/media/instagram/03.webp
