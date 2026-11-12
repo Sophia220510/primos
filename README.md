@@ -15,8 +15,8 @@ Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execu
 
 ## Páginas e jornada
 
-- Início: vitrine manual de três destaques, peças, carro-chefe, banhos, Mario, licenças, dúvidas e orçamento.
-- Peças e aplicações: oito categorias, cada uma com sua página e galeria ampliável. São 24 fotografias reais selecionadas.
+- Início: abertura fotográfica ampla com três destaques manuais, apresentação da empresa, seleção editorial de peças, carro-chefe, banhos, jornada do pedido, Mario, licenças e dúvidas.
+- Peças e aplicações: catálogo filtrável por aplicação, oito categorias com página própria e galeria ampliável. São 24 fotografias reais selecionadas.
 - Hastes de panela: destaque como carro-chefe, com seis registros.
 - Banhos e acabamentos: cromação e niquelação, com comparação dos serviços e orientação para o orçamento.
 - Processo: seis etapas usuais, da avaliação da peça à conferência do acabamento, em linguagem acessível.
@@ -32,8 +32,10 @@ Rotas estáticas por hash. A entrada padrão é Início. Links antigos de servi�
 - `src/client-media.json`: fotos e categorias.
 - `src/components/FinalPages.tsx`: páginas e seções.
 - `src/components/FinalShared.tsx`: componentes compartilhados.
+- `src/components/Redesign.tsx`: abertura, apresentação, catálogo filtrável e jornada do pedido.
+- `src/components/PieceStudio.tsx` e `src/piece-renderer.ts`: estúdio 3D sob demanda.
 - `src/App.tsx`: navegação, menu, efeitos e modal.
-- `src/final.css`: identidade e responsividade.
+- `src/final.css`: componentes base e responsividade; `src/editorial.css`: estúdio; `src/redesign.css`: nova direção visual e layouts.
 - `public/media/cliente/`: WebPs de fotos, versões menores e retratos.
 
 Sem bibliotecas de animação: CSS, IntersectionObserver e requestAnimationFrame. A barra de leitura não dispara renderizações da aplicação a cada rolagem. Movimento reduzido, teclado, Escape e retorno de foco no modal são respeitados. A vitrine não gira automaticamente.

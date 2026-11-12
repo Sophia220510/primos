@@ -61,6 +61,25 @@ for (const width of [360, 390, 768, 1440]) {
       `${width}px ${route}: overflow after images`,
     );
   }
+  await page.goto("http://127.0.0.1:5175/#/pecas");
+  await expect(page.locator(".r-catalog-item")).toHaveCount(8);
+  await page.getByRole("button", { name: "Para panelas", exact: true }).click();
+  await expect(page.locator(".r-catalog-item")).toHaveCount(2);
+  await expect(page.locator(".r-catalog")).toContainText("Hastes de panela");
+  await page
+    .getByRole("button", { name: "Metais sanitários", exact: true })
+    .click();
+  await expect(page.locator(".r-catalog-item")).toHaveCount(3);
+  await expect(page.locator(".r-catalog")).toContainText("Torneiras");
+  await page
+    .getByRole("button", { name: "Outros componentes", exact: true })
+    .click();
+  await expect(page.locator(".r-catalog-item")).toHaveCount(3);
+  await expect(page.locator(".r-catalog")).toContainText("Guidões");
+  await page
+    .getByRole("button", { name: "Todas as peças", exact: true })
+    .click();
+  await expect(page.locator(".r-catalog-item")).toHaveCount(8);
   await page.goto("http://127.0.0.1:5175/");
   await page.waitForURL("**/#/inicio");
   await expect(
@@ -241,7 +260,7 @@ assert.notEqual(
   await moving.locator("h1").evaluate((e) => getComputedStyle(e).animationName),
   "none",
 );
-const card = moving.locator(".f-product-card").first();
+const card = moving.locator(".r-catalog-item").first();
 await card.scrollIntoViewIfNeeded();
 await expect(card).toHaveClass(/f-visible/);
 await moving.evaluate(() =>

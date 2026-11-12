@@ -42,17 +42,19 @@ export function ProductImage({
   id,
   priority = false,
   className = "",
+  sizes = "(max-width: 600px) 90vw, (max-width: 1000px) 48vw, 42vw",
 }: {
   id: string;
   priority?: boolean;
   className?: string;
+  sizes?: string;
 }) {
   const p = getPhoto(id);
   return (
     <img
       src={mediaUrl(p.src)}
       srcSet={`${mediaUrl(p.small)} 640w, ${mediaUrl(p.src)} ${p.width}w`}
-      sizes="(max-width: 600px) 90vw, (max-width: 1000px) 48vw, 42vw"
+      sizes={sizes}
       width={p.width}
       height={p.height}
       alt={p.alt}

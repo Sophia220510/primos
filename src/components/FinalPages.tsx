@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import PieceStudio from "./PieceStudio";
+import { Showcase, Introduction, Collection, Journey } from "./Redesign";
 import {
   business,
   productGroups,
@@ -30,159 +31,6 @@ export type OpenPhoto = (
   trigger: HTMLButtonElement,
 ) => void;
 
-export function Showcase() {
-  const [slide, setSlide] = useState(0);
-  const slides = [
-    {
-      photo: "hastes-1",
-      category: "Hastes de panela",
-      label: "Nosso carro-chefe",
-      to: "pecas/hastes",
-    },
-    {
-      photo: "torneiras-1",
-      category: "Torneiras",
-      label: "O cuidado com cada superfície",
-      to: "pecas/torneiras",
-    },
-    {
-      photo: "canoplas-1",
-      category: "Canoplas",
-      label: "Acabamento nos detalhes",
-      to: "pecas/canoplas",
-    },
-  ];
-  const current = slides[slide];
-  return (
-    <section className="f-showcase" aria-label="Vitrine de acabamentos">
-      <div className="f-showcase-copy">
-        <Eyebrow>CROMAÇÃO & NIQUELAÇÃO · DESDE 2002</Eyebrow>
-        <h1>
-          Metal ganha
-          <br />
-          <em>outra presença.</em>
-        </h1>
-        <p>
-          Cromação e niquelação em ferro, metais e zamac. Da unidade ao lote, um
-          acabamento pensado para a sua peça.
-        </p>
-        <div className="f-hero-actions">
-          <Action />
-          <Action to="pecas" secondary>
-            Conheça as peças
-          </Action>
-        </div>
-        <div className="f-hero-proof">
-          <span>
-            1983<strong>Experiência no ramo</strong>
-          </span>
-          <span>
-            2002<strong>Início da Primos</strong>
-          </span>
-          <span>
-            1 ou +<strong>Unidades e lotes</strong>
-          </span>
-        </div>
-      </div>
-      <div className="f-showcase-media" key={current.photo}>
-        <ProductImage id={current.photo} priority={slide === 0} />
-        <div className="f-photo-index">
-          <span>FOTOGRAFIA REAL · CROMEAÇÃO PRIMOS</span>
-          <span>0{slide + 1} / 03</span>
-        </div>
-        <div className="f-slide-caption" aria-live="polite">
-          <span>{current.label}</span>
-          <h2>{current.category}</h2>
-          <RouteLink to={current.to}>
-            Ver acabamento da peça <Arrow />
-          </RouteLink>
-        </div>
-      </div>
-      <div className="f-showcase-controls">
-        <div className="f-dots" aria-label="Escolher destaque">
-          {slides.map((s, i) => (
-            <button
-              key={s.photo}
-              aria-label={`Ver destaque: ${s.category}`}
-              aria-pressed={slide === i}
-              onClick={() => setSlide(i)}
-            >
-              <span />
-            </button>
-          ))}
-        </div>
-        <div className="f-slider-arrows">
-          <button
-            aria-label="Destaque anterior"
-            onClick={() => setSlide((slide + 2) % 3)}
-          >
-            ←
-          </button>
-          <button
-            aria-label="Próximo destaque"
-            onClick={() => setSlide((slide + 1) % 3)}
-          >
-            →
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
-export function ProductGrid({ featured = false }: { featured?: boolean }) {
-  const groups = featured ? productGroups.slice(0, 5) : productGroups;
-  return (
-    <section className="f-products f-container">
-      <div className="f-section-head f-reveal">
-        <div>
-          <Eyebrow>PEÇAS & APLICAÇÕES</Eyebrow>
-          <h2>
-            Diferentes formas.
-            <br />
-            <em>O mesmo cuidado.</em>
-          </h2>
-        </div>
-        <div>
-          <p>
-            Conheça algumas das peças que passam pela Primos. Fotografias reais
-            do nosso trabalho, do detalhe ao conjunto.
-          </p>
-          {featured && (
-            <RouteLink className="f-text-link" to="pecas">
-              Explorar todas as peças <Arrow />
-            </RouteLink>
-          )}
-        </div>
-      </div>
-      <div className={`f-product-grid ${featured ? "f-featured-grid" : ""}`}>
-        {groups.map((g, i) => (
-          <RouteLink
-            to={`pecas/${g.slug}`}
-            key={g.slug}
-            className={`f-product-card f-reveal ${i === 0 ? "f-product-main" : ""}`}
-          >
-            <div>
-              <ProductImage id={g.cover} />
-              <span className="f-card-arrow">
-                <Arrow />
-              </span>
-              {g.slug === "hastes" && (
-                <span className="f-main-badge">CARRO-CHEFE</span>
-              )}
-            </div>
-            <span className="f-category-index">
-              0{i + 1} / {g.caption}
-              {["hastes", "canoplas", "guidoes"].includes(g.slug) && (
-                <span> · EXPLORE EM 3D</span>
-              )}
-            </span>
-            <h3>{g.name}</h3>
-          </RouteLink>
-        ))}
-      </div>
-    </section>
-  );
-}
 export function Flagship() {
   return (
     <section className="f-flagship">
@@ -292,19 +140,11 @@ export function Home() {
   return (
     <>
       <Showcase />
-      <div className="f-trust-strip">
-        <div className="f-container">
-          <span>FERRO, METAIS & ZAMAC</span>
-          <span>UNIDADES & LOTES</span>
-          <span>HASTES DE PANELA EM DESTAQUE</span>
-          <RouteLink to="mario-reis">
-            Conheça quem faz <Arrow />
-          </RouteLink>
-        </div>
-      </div>
-      <ProductGrid featured />
+      <Introduction />
+      <Collection featured />
       <Flagship />
       <BathPreview />
+      <Journey />
       <FounderPreview />
       <LicenseBlock />
       <Faq />
@@ -326,7 +166,7 @@ export function ProductsPage() {
         }
         text="Hastes de panela, pesos, dobradiças, metais sanitários e outras peças. Explore nossos registros e converse sobre a sua necessidade."
       />
-      <ProductGrid />
+      <Collection />
       <FinalCta />
     </>
   );
@@ -651,9 +491,11 @@ export function FounderPage() {
             <h1>
               Mario Reis.
               <br />
-              Uma vida de trabalho.
-              <br />
-              <em>Uma história em metal.</em>
+              <em>
+                Uma vida
+                <br />
+                em metal.
+              </em>
             </h1>
             <p>
               De Pernambuco a São Paulo. Do primeiro trabalho no ramo, em 1983,
