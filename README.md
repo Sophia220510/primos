@@ -40,7 +40,7 @@ Rotas estáticas por hash. A entrada padrão é Início. Links antigos de servi�
 
 Sem bibliotecas de animação: CSS, IntersectionObserver e requestAnimationFrame. A barra de leitura não dispara renderizações da aplicação a cada rolagem. Movimento reduzido, teclado, Escape e retorno de foco no modal são respeitados. A vitrine não gira automaticamente.
 
-A apresentação usa tipografia de leitura ampliada, seções compactas, entradas sequenciais, reflexo nas fotos ao passar o cursor e profundidade na abertura por movimento do mouse. A faixa só se movimenta quando visível e pode ser pausada. Movimento reduzido desliga os efeitos adicionais. O 3D continua separado e carregado apenas após interação.
+A apresentação usa tipografia de leitura ampliada, seções compactas, entradas leves e ?nicas nos cards e reflexo nas fotos ao passar o cursor. Se??es grandes ficam est?ticas e vis?veis para reduzir o custo de composi??o. A faixa só se movimenta quando visível e pode ser pausada. Movimento reduzido desliga os efeitos adicionais. O 3D continua separado e carregado apenas após interação.
 
 ## Fontes e pendências
 

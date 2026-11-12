@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { productGroups } from "../final-data";
 import { Action, Arrow, Eyebrow, ProductImage, RouteLink } from "./FinalShared";
 
@@ -25,45 +25,9 @@ const slides = [
 
 export function Showcase() {
   const [slide, setSlide] = useState(0);
-  const hero = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const element = hero.current;
-    if (!element) return;
-    const allowed = matchMedia(
-      "(pointer:fine) and (prefers-reduced-motion:no-preference)",
-    );
-    let frame = 0;
-    const move = (event: PointerEvent) => {
-      if (!allowed.matches) return;
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const bounds = element.getBoundingClientRect();
-        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-        element.style.setProperty("--hero-x", `${x * 16}px`);
-        element.style.setProperty("--hero-y", `${y * 12}px`);
-        element.style.setProperty("--hero-tilt", `${x * -5}deg`);
-      });
-    };
-    const reset = () => {
-      cancelAnimationFrame(frame);
-      element.style.setProperty("--hero-x", "0px");
-      element.style.setProperty("--hero-y", "0px");
-      element.style.setProperty("--hero-tilt", "0deg");
-    };
-    element.addEventListener("pointermove", move, { passive: true });
-    element.addEventListener("pointerleave", reset);
-    allowed.addEventListener("change", reset);
-    return () => {
-      cancelAnimationFrame(frame);
-      element.removeEventListener("pointermove", move);
-      element.removeEventListener("pointerleave", reset);
-      allowed.removeEventListener("change", reset);
-    };
-  }, []);
   const current = slides[slide];
   return (
-    <section ref={hero} className="r-hero" aria-label="Vitrine de acabamentos">
+    <section className="r-hero" aria-label="Vitrine de acabamentos">
       <div className="r-hero-image" key={current.photo}>
         <ProductImage id={current.photo} priority sizes="100vw" />
       </div>
@@ -109,7 +73,7 @@ export function Showcase() {
             aria-pressed={slide === i}
             aria-label={`Mostrar foto de ${s.title}`}
           >
-            <ProductImage id={s.photo} />
+            <ProductImage id={s.photo} sizes="(max-width: 1100px) 30vw, 20vw" />
             <span>
               0{i + 1}
               <strong>{s.title}</strong>
@@ -274,7 +238,7 @@ export function Collection({ featured = false }: { featured?: boolean }) {
               className="r-catalog-item f-reveal"
             >
               <div className="r-catalog-photo">
-                <ProductImage id={g.cover} />
+                <ProductImage id={g.cover} sizes="(max-width: 800px) 45vw, (max-width: 1100px) 30vw, 23vw" />
                 <span className="r-catalog-open">
                   <Arrow />
                 </span>

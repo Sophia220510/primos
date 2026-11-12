@@ -17,9 +17,7 @@ export default function PieceStudio({
   const [active, setActive] = useState(false);
   const [ready, setReady] = useState(false);
   const [failed, setFailed] = useState(false);
-  const [paused, setPaused] = useState(
-    () => matchMedia("(prefers-reduced-motion: reduce)").matches,
-  );
+  const [paused, setPaused] = useState(true);
   const initialPaused = useRef(paused);
 
   useEffect(() => {
@@ -33,6 +31,7 @@ export default function PieceStudio({
           host.current,
           slug,
           initialPaused.current,
+          () => setPaused(true),
         );
         controls.current = renderer;
         dispose = renderer.dispose;
@@ -60,7 +59,10 @@ export default function PieceStudio({
           <br />
           <em>O mesmo detalhe.</em>
         </h2>
-        <p>Explore a forma e observe como a luz percorre o metal.</p>
+        <p>
+          Gire a peça para observar o perfil, a espessura e os reflexos do
+          acabamento.
+        </p>
         <small>
           Representação 3D ilustrativa. As fotografias abaixo mostram as peças
           reais; formatos e medidas variam conforme o pedido.
@@ -70,7 +72,9 @@ export default function PieceStudio({
         </RouteLink>
       </div>
       <div className="p-stage">
-        <span className="p-stage-label">PRIMOS — ESTUDO DE SUPERFÍCIE</span>
+        <span className="p-stage-label">
+          ESTÚDIO PRIMOS / MODELO ILUSTRATIVO
+        </span>
         {(!ready || failed) && (
           <div className="p-studio-poster">
             <ProductImage id={cover} />

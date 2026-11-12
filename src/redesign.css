@@ -2103,3 +2103,100 @@ h4 {
   .r-moving-track {
   animation-play-state: paused;
 }
+/* Performance: no full-page style invalidation or moving filtered surfaces. */
+.f-header,
+.f-lightbox::backdrop {
+  backdrop-filter: none;
+}
+.r-hero-image {
+  animation: none;
+}
+.r-hero-image img {
+  transform: none;
+  transition: none;
+  filter: none;
+}
+.r-hero-previews {
+  transform: none;
+  transition: none;
+}
+.r-catalog-photo img,
+.r-catalog-item:hover img,
+.f-flagship-image img,
+.f-bath-feature img {
+  filter: none;
+}
+.r-catalog-photo img {
+  transition: transform 0.25s;
+}
+.f-motion-ready .f-reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .f-motion-ready .r-catalog-item.f-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.3s,
+      transform 0.35s;
+  }
+  .f-motion-ready .r-catalog-item.f-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .f-motion-ready .r-catalog-item.f-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+.f-bath-list > a,
+.f-direct-contact > a {
+  transition: background 0.2s;
+}
+.f-bath-list > a:hover,
+.f-direct-contact > a:hover {
+  padding-left: 0;
+}
+.p-stage {
+  background: radial-gradient(
+    ellipse at 50% 42%,
+    #536575,
+    #243643 60%,
+    #142a39
+  );
+}
+.p-stage::after {
+  display: none;
+}
+.p-canvas {
+  inset: 45px 0 70px;
+}
+.p-studio-controls > span {
+  font-size: 10px;
+}
+.p-studio-controls button {
+  font-size: 13px;
+}
+.f-reading-progress {
+  display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .f-reading-progress {
+    display: block;
+    animation: primos-reading linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes primos-reading {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

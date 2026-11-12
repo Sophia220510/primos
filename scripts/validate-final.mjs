@@ -292,7 +292,7 @@ await expect(card).toHaveClass(/f-visible/);
 await moving.evaluate(() =>
   scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }),
 );
-await expect(card).not.toHaveClass(/f-visible/);
+await expect(card).toHaveClass(/f-visible/);
 await card.scrollIntoViewIfNeeded();
 await expect(card).toHaveClass(/f-visible/);
 await moving.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
@@ -300,6 +300,6 @@ await moving.waitForTimeout(900);
 await moving.screenshot({ path: ".playwright/final/abertura-desktop.png" });
 assert.deepEqual(errors, []);
 console.log(
-  "Abertura, reentrada das animações, movimento reduzido, rotas antigas e ausência de erros verificados.",
+  "Abertura, revelação única sem piscar na rolagem, movimento reduzido, rotas antigas e ausência de erros verificados.",
 );
 await browser.close();

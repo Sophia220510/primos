@@ -118,9 +118,14 @@ export default function App() {
     main.current?.focus({ preventScroll: true });
     const observer = new IntersectionObserver(
       (entries) =>
-        entries.forEach((e) =>
-          e.target.classList.toggle("f-visible", e.isIntersecting),
-        ),
+        entries.forEach((e) => {
+          if (e.target.classList.contains("r-moving-band")) {
+            e.target.classList.toggle("f-visible", e.isIntersecting);
+          } else if (e.isIntersecting) {
+            e.target.classList.add("f-visible");
+            observer.unobserve(e.target);
+          }
+        }),
       { threshold: 0.05 },
     );
     const seen = new WeakSet<Element>();
@@ -150,29 +155,6 @@ export default function App() {
       cancelAnimationFrame(timer);
     };
   }, [routeKey, page, slug]);
-  useEffect(() => {
-    let raf = 0,
-      last = scrollY;
-    const scroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const max = document.documentElement.scrollHeight - innerHeight;
-        document.documentElement.style.setProperty(
-          "--f-progress",
-          String(max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0),
-        );
-        document.documentElement.dataset.direction =
-          scrollY < last ? "up" : "down";
-        last = scrollY;
-      });
-    };
-    addEventListener("scroll", scroll, { passive: true });
-    scroll();
-    return () => {
-      cancelAnimationFrame(raf);
-      removeEventListener("scroll", scroll);
-    };
-  }, []);
   useEffect(() => {
     if (!menu) return;
     nav.current?.querySelector<HTMLAnchorElement>("a")?.focus();

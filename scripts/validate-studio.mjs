@@ -8,6 +8,16 @@ const browser = await chromium.launch({
   ],
 });
 const page = await browser.newPage({ reducedMotion: "reduce" });
+await page.addInitScript(() => {
+  window.__studioDraws = 0;
+  for (const name of ["drawElements", "drawArrays"]) {
+    const original = WebGL2RenderingContext.prototype[name];
+    WebGL2RenderingContext.prototype[name] = function (...args) {
+      window.__studioDraws++;
+      return original.apply(this, args);
+    };
+  }
+});
 const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
 for (const width of [390, 1440]) {
@@ -23,9 +33,20 @@ for (const width of [390, 1440]) {
     await expect(
       page.getByRole("button", { name: "Animar", exact: true }),
     ).toBeVisible();
+    await page.waitForTimeout(200);
+    const idleDraws = await page.evaluate(() => window.__studioDraws);
+    await page.waitForTimeout(200);
+    assert.equal(
+      await page.evaluate(() => window.__studioDraws),
+      idleDraws,
+      "Paused studio must not render continuously",
+    );
     await page.getByRole("button", { name: "Girar peça à direita" }).click();
     await page.getByRole("button", { name: "Reiniciar", exact: true }).click();
     await page.getByRole("button", { name: "Animar", exact: true }).click();
+    await expect
+      .poll(() => page.evaluate(() => window.__studioDraws))
+      .toBeGreaterThan(idleDraws);
     await page.getByRole("button", { name: "Pausar", exact: true }).click();
     assert(
       await page.evaluate(
