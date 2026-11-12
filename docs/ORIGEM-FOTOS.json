@@ -1,0 +1,216 @@
+{
+  "received": "2026-11-12",
+  "totalReceived": 59,
+  "selection": [
+    {
+      "id": "hastes-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.19.48 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.18",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "hastes-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.19.49.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.18",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "hastes-3",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.19.51.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.18",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "hastes-4",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.19.52 (2).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.18",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "hastes-5",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.20.34.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.36",
+      "width": 900,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "hastes-6",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.19.53.jpeg",
+      "sourceArchive": "client-originals-2026-11",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "pesos-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.21.21 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.50",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "pesos-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.21.21 (2).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.50",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "pesos-3",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.21.21.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.50",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "dobradicas-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.21.44.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.52",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "dobradicas-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.21.51.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.52",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "dobradicas-3",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.21.52 (2).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.01.52",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "torneiras-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.26.37.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.17",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "torneiras-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.26.42 (2).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.17",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "torneiras-3",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.26.42.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.17",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "canoplas-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.27.06.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.25",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "canoplas-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.27.06 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.25",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "canoplas-3",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.27.07.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.25",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "flexiveis-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.27.33.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.33",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "flexiveis-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.27.35.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.33",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "flexiveis-3",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.27.36 (2).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.33",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "guidoes-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.26.43 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.17",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "outras-pecas-1",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.28.00.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.41",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "outras-pecas-2",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.28.02 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.41",
+      "width": 1200,
+      "height": 1600,
+      "operations": "Orientação EXIF, redução proporcional e compressão WebP; sem alteração do conteúdo."
+    },
+    {
+      "id": "mario-original",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.23.25 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.22",
+      "operations": "Otimização proporcional; fotografia real sem alteração do conteúdo."
+    },
+    {
+      "id": "mario-trabalho",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.23.26.jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.22",
+      "operations": "Otimização proporcional; fotografia real sem alteração do conteúdo."
+    },
+    {
+      "id": "mario-detalhe",
+      "sourceFile": "WhatsApp Image 2026-11-11 at 18.23.26 (1).jpeg",
+      "sourceArchive": "WhatsApp Unknown 2026-11-12 at 00.02.22",
+      "operations": "Otimização proporcional; fotografia real sem alteração do conteúdo."
+    }
+  ]
+}

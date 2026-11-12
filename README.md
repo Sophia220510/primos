@@ -1,46 +1,55 @@
-# Cromeação Primos — apresentação comercial
+# Cromeação Primos — versão de apresentação final
 
-Site em React, TypeScript e Vite, com oito páginas navegáveis: início, serviços, cromação, niquelação, trabalhos, processo, empresa e contato. Identidade em prata, preto/grafite e azul, derivada do logo oficial, com áreas claras de leitura, tipografia editorial e fotografias reais. O logo é o publicado no perfil oficial.
+React, TypeScript e Vite. Identidade prata, grafite e azul, vitrine de peças na abertura, fotografias fornecidas pela empresa e página dedicada a Mario Reis. Não há backend ou envio automático de mensagens.
 
-## Executar
+## Rodar
 
 ```sh
 npm ci
 npm run dev -- --port 5175
 ```
 
-Prévia local: http://127.0.0.1:5175/. Build e TypeScript: `npm run build`. A entrada padrão é `#/inicio`, com “Início” destacado no menu. As páginas usam URLs como `#/trabalhos`, compatíveis com hospedagem estática. Serviços detalhados pertencem ao grupo “Serviços” e possuem breadcrumbs para retornar. Não foi feita publicação em domínio público. Noindex e robots.txt estão configurados.
+Prévia: http://127.0.0.1:5175/#/inicio. Biografia: http://127.0.0.1:5175/#/mario-reis.
 
-## Conteúdo e manutenção
+Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execute `npx playwright install chromium` na primeira vez e `npm run test:ui`.
 
-- `src/content.ts`: empresa, contatos, serviços, perguntas, materiais, dez registros reais e suas fontes.
-- `src/Sections.tsx`: seções e formulário de consulta.
-- `src/App.tsx`: navegação, páginas, movimento e modal acessível.
-- `src/professional.css` e `src/refinements.css`: estilos responsivos e animações.
-- `public/media/instagram/`: arquivos WebP salvos localmente, sem hotlinks temporários.
+## Páginas e jornada
 
-A galeria reúne cinco fotografias e cinco frames de vídeos, identificados como tal. Filtros por peças/processo, ampliação, navegação por setas, Escape, controle de foco e links para os posts originais. Não há imagem de IA na apresentação atual.
+- Início: vitrine manual de três destaques, peças, carro-chefe, banhos, Mario, licenças, dúvidas e orçamento.
+- Peças e aplicações: oito categorias, cada uma com sua página e galeria ampliável. São 24 fotografias reais selecionadas.
+- Hastes de panela: destaque como carro-chefe, com seis registros.
+- Banhos e acabamentos: cromação e niquelação, além de consulta sobre os outros banhos.
+- Processo: consulta e cuidados com a peça, sem inventar uma sequência química da empresa.
+- Mario Reis: retrato com tratamento de fundo, biografia, linha do tempo e fotos reais de trabalho.
+- Empresa: atuação e licenças informadas pelo cliente.
+- Contato: WhatsApp, e-mail, Instagram e preparação de orçamento com nome da peça e banho vindos da navegação.
 
-## Contato
+Rotas estáticas por hash. A entrada padrão é Início. Links antigos de serviços e trabalhos redirecionam para as novas páginas. O formulário prepara o resumo; o visitante revisa e escolhe continuar no WhatsApp ou copiar. Fotos são anexadas na conversa. O material e a quantidade podem ficar desconhecidos.
 
-WhatsApp atual da bio oficial: +55 11 91493-5874. O formulário gera uma mensagem codificada para o canal, mostra um resumo e permite copiá-lo. É possível conversar diretamente pelo WhatsApp sem preencher o formulário. Material e quantidade podem ficar como “não sei” e “a informar”; apenas nome e descrição são obrigatórios. O envio e o anexo de fotos são feitos na conversa pelo visitante. O formulário não transmite dados a backend, nem simula envio concluído.
+## Conteúdo editável
 
-## Jornada do visitante
+- `src/final-data.ts`: dados comerciais, biografia, banhos, dúvidas e links.
+- `src/client-media.json`: fotos e categorias.
+- `src/components/FinalPages.tsx`: páginas e seções.
+- `src/components/FinalShared.tsx`: componentes compartilhados.
+- `src/App.tsx`: navegação, menu, efeitos e modal.
+- `src/final.css`: identidade e responsividade.
+- `public/media/cliente/`: WebPs de fotos, versões menores e retratos.
 
-Menu principal: Início, Serviços, Trabalhos, A empresa e Pedir orçamento. A home apresenta a atuação, explica os serviços, mostra três exemplos reais e explica como consultar a equipe. Processo e demais detalhes ficam nas páginas internas. O teste percorre a jornada de pesquisa, entrada no orçamento e consulta sem quantidade conhecida.
+Sem bibliotecas de animação: CSS, IntersectionObserver e requestAnimationFrame. A barra de leitura não dispara renderizações da aplicação a cada rolagem. Movimento reduzido, teclado, Escape e retorno de foco no modal são respeitados. A vitrine não gira automaticamente.
 
-## Movimento
+## Fontes e pendências
 
-Entrada escalonada de títulos, revelação inicial da fotografia, aproximação sutil das imagens, leve deslocamento da imagem principal no desktop e transições de seção que se repetem ao entrar/sair da área visível, inclusive ao subir a página. Barra de progresso de leitura e retorno ao topo. Movimento reduzido do sistema é respeitado; a rolagem continua nativa.
+[Conteúdo recebido e pendências](docs/CONTEUDO-FINAL.md), [origem das fotos](docs/ORIGEM-FOTOS.json), [referências visuais](docs/REFERENCIAS-VISUAIS.md) e [prompt do tratamento do retrato](docs/PROMPT-RETRATO.md).
 
-## Referências
+**Para fechar a redação técnica:** faltam os nomes de todos os outros banhos e a explicação dos procedimentos específicos da empresa. Os ZIPs continham fotos. Não foram inventados banhos adicionais, prazos, garantias, certificações ou números de licenças. Endereço/horários e documentos das licenças podem ser adicionados quando fornecidos.
 
-[REFERENCIAS.md](REFERENCIAS.md) contém as fontes, contexto e pendências. Em 07/10/2026 o navegador conseguiu acessar publicamente o perfil e os posts, sem login. Fotos, identidade e link de WhatsApp foram verificados. Não foram usados contatos antigos das legendas como contato atual.
+O e-mail informado é cromeacaoprimos@gmail.com. O WhatsApp permanece o canal comercial já confirmado no perfil. As fotografias de peças não tiveram conteúdo alterado; apenas o fundo do retrato de Mario foi tratado com image_gen, com o original preservado e a edição documentada.
 
-Confirmar com a empresa: endereço/horários, materiais e dimensões atendidos atualmente, quantidade mínima, pessoas físicas, peças usadas, prazos, garantias e aprovação das fotos para publicação definitiva.
+Noindex mantido. Não foi configurada publicação em domínio público.
 
-## Verificações
+## Verificação
 
-Chromium em 360, 390, 768 e 1440 px: oito páginas sem rolagem horizontal, imagens carregadas, navegação, menu móvel/Escape, filtros, dez registros, modal/setas/Tab/Escape/retorno de foco, mensagem de WhatsApp e codificação, resumo/clipboard e FAQ. A abertura e a reentrada das animações ao rolar em ambas as direções também foram verificadas. Build e TypeScript aprovados, sem erros de console nos fluxos testados.
+Teste automatizado em Chromium a 360, 390, 768 e 1440 px: 15 páginas (sete principais e oito categorias), sem rolagem horizontal, fotos decodificadas, vitrine manual, navegação e menu, biografia, modal com teclado e foco, formulário contextual, mensagem codificada, clipboard, e-mail e dúvidas. Testados abertura/reentrada das animações, movimento reduzido e rotas antigas. Capturas em .playwright/final (não versionadas). O teste verifica os links de contato sem enviar mensagens.
 
-Para repetir: mantenha o servidor na porta 5175, execute `npx playwright install chromium` na primeira vez e `npm run test:ui`. As capturas locais ficam em `.playwright/`, ignoradas no Git. O teste do WhatsApp verifica o destino gerado sem enviar mensagens. Não foram realizados testes em aparelhos físicos ou outros navegadores.
+As capturas de desktop e celular foram inspecionadas. Não foram feitos testes em aparelhos físicos nem em outros navegadores.

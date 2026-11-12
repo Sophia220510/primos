@@ -1,0 +1,334 @@
+{
+  "groups": [
+    {
+      "slug": "hastes",
+      "name": "Hastes de panela",
+      "caption": "Nosso carro-chefe",
+      "description": "Acabamento de hastes de panela, o carro-chefe da Cromeação Primos. Atendimento em unidades e lotes, conforme a necessidade de cada pedido.",
+      "cover": "hastes-1",
+      "count": 6
+    },
+    {
+      "slug": "pesos",
+      "name": "Pesos de panela de pressão",
+      "caption": "Pequenas peças, atenção ao detalhe",
+      "description": "Peças para panela de pressão com atenção ao acabamento da superfície. Consulte a equipe sobre o material, as dimensões e o tratamento.",
+      "cover": "pesos-1",
+      "count": 3
+    },
+    {
+      "slug": "dobradicas",
+      "name": "Dobradiças",
+      "caption": "Acabamento em cada componente",
+      "description": "Dobradiças e componentes apresentados pela empresa. Uma peça ou um lote: compartilhe as características para avaliar o acabamento.",
+      "cover": "dobradicas-1",
+      "count": 3
+    },
+    {
+      "slug": "torneiras",
+      "name": "Torneiras",
+      "caption": "Reflexos que valorizam a peça",
+      "description": "Acabamento de superfícies em torneiras e componentes. O material e a aplicação orientam a avaliação do serviço.",
+      "cover": "torneiras-1",
+      "count": 3
+    },
+    {
+      "slug": "canoplas",
+      "name": "Canoplas",
+      "caption": "O acabamento também está no detalhe",
+      "description": "Canoplas e seus detalhes de superfície. Consulte o tratamento conforme o material e o acabamento desejado.",
+      "cover": "canoplas-1",
+      "count": 3
+    },
+    {
+      "slug": "flexiveis",
+      "name": "Flexíveis",
+      "caption": "Textura, forma e superfície",
+      "description": "Registros reais de flexíveis enviados pela empresa. Converse com a equipe para avaliar o seu material e as condições da peça.",
+      "cover": "flexiveis-1",
+      "count": 3
+    },
+    {
+      "slug": "guidoes",
+      "name": "Guidões",
+      "caption": "Forma e acabamento em conjunto",
+      "description": "Guidões apresentados pela Cromeação Primos. Envie imagens e medidas para consultar a viabilidade do tratamento.",
+      "cover": "guidoes-1",
+      "count": 1
+    },
+    {
+      "slug": "outras-pecas",
+      "name": "Outras peças",
+      "caption": "Seu projeto começa na conversa",
+      "description": "Outros componentes metálicos também fazem parte dos registros da empresa. Consulte a equipe sobre a peça e o material.",
+      "cover": "outras-pecas-1",
+      "count": 2
+    }
+  ],
+  "photos": [
+    {
+      "id": "hastes-1",
+      "category": "hastes",
+      "title": "Hastes de panela",
+      "src": "media/cliente/hastes-1.webp",
+      "small": "media/cliente/hastes-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Hastes de panela: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "hastes-2",
+      "category": "hastes",
+      "title": "Hastes de panela",
+      "src": "media/cliente/hastes-2.webp",
+      "small": "media/cliente/hastes-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Hastes de panela: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "hastes-3",
+      "category": "hastes",
+      "title": "Hastes de panela",
+      "src": "media/cliente/hastes-3.webp",
+      "small": "media/cliente/hastes-3-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Hastes de panela: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "hastes-4",
+      "category": "hastes",
+      "title": "Hastes de panela",
+      "src": "media/cliente/hastes-4.webp",
+      "small": "media/cliente/hastes-4-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Hastes de panela: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "hastes-5",
+      "category": "hastes",
+      "title": "Hastes de panela",
+      "src": "media/cliente/hastes-5.webp",
+      "small": "media/cliente/hastes-5-640.webp",
+      "width": 900,
+      "height": 1600,
+      "alt": "Hastes de panela: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "hastes-6",
+      "category": "hastes",
+      "title": "Hastes de panela",
+      "src": "media/cliente/hastes-6.webp",
+      "small": "media/cliente/hastes-6-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Hastes de panela: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "pesos-1",
+      "category": "pesos",
+      "title": "Pesos de panela de pressão",
+      "src": "media/cliente/pesos-1.webp",
+      "small": "media/cliente/pesos-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Pesos de panela de pressão: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "pesos-2",
+      "category": "pesos",
+      "title": "Pesos de panela de pressão",
+      "src": "media/cliente/pesos-2.webp",
+      "small": "media/cliente/pesos-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Pesos de panela de pressão: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "pesos-3",
+      "category": "pesos",
+      "title": "Pesos de panela de pressão",
+      "src": "media/cliente/pesos-3.webp",
+      "small": "media/cliente/pesos-3-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Pesos de panela de pressão: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "dobradicas-1",
+      "category": "dobradicas",
+      "title": "Dobradiças",
+      "src": "media/cliente/dobradicas-1.webp",
+      "small": "media/cliente/dobradicas-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Dobradiças: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "dobradicas-2",
+      "category": "dobradicas",
+      "title": "Dobradiças",
+      "src": "media/cliente/dobradicas-2.webp",
+      "small": "media/cliente/dobradicas-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Dobradiças: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "dobradicas-3",
+      "category": "dobradicas",
+      "title": "Dobradiças",
+      "src": "media/cliente/dobradicas-3.webp",
+      "small": "media/cliente/dobradicas-3-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Dobradiças: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "torneiras-1",
+      "category": "torneiras",
+      "title": "Torneiras",
+      "src": "media/cliente/torneiras-1.webp",
+      "small": "media/cliente/torneiras-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Torneiras: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "torneiras-2",
+      "category": "torneiras",
+      "title": "Torneiras",
+      "src": "media/cliente/torneiras-2.webp",
+      "small": "media/cliente/torneiras-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Torneiras: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "torneiras-3",
+      "category": "torneiras",
+      "title": "Torneiras",
+      "src": "media/cliente/torneiras-3.webp",
+      "small": "media/cliente/torneiras-3-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Torneiras: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "canoplas-1",
+      "category": "canoplas",
+      "title": "Canoplas",
+      "src": "media/cliente/canoplas-1.webp",
+      "small": "media/cliente/canoplas-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Canoplas: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "canoplas-2",
+      "category": "canoplas",
+      "title": "Canoplas",
+      "src": "media/cliente/canoplas-2.webp",
+      "small": "media/cliente/canoplas-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Canoplas: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "canoplas-3",
+      "category": "canoplas",
+      "title": "Canoplas",
+      "src": "media/cliente/canoplas-3.webp",
+      "small": "media/cliente/canoplas-3-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Canoplas: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "flexiveis-1",
+      "category": "flexiveis",
+      "title": "Flexíveis",
+      "src": "media/cliente/flexiveis-1.webp",
+      "small": "media/cliente/flexiveis-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Flexíveis: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "flexiveis-2",
+      "category": "flexiveis",
+      "title": "Flexíveis",
+      "src": "media/cliente/flexiveis-2.webp",
+      "small": "media/cliente/flexiveis-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Flexíveis: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "flexiveis-3",
+      "category": "flexiveis",
+      "title": "Flexíveis",
+      "src": "media/cliente/flexiveis-3.webp",
+      "small": "media/cliente/flexiveis-3-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Flexíveis: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "guidoes-1",
+      "category": "guidoes",
+      "title": "Guidões",
+      "src": "media/cliente/guidoes-1.webp",
+      "small": "media/cliente/guidoes-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Guidões: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "outras-pecas-1",
+      "category": "outras-pecas",
+      "title": "Outras peças",
+      "src": "media/cliente/outras-pecas-1.webp",
+      "small": "media/cliente/outras-pecas-1-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Outras peças: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    },
+    {
+      "id": "outras-pecas-2",
+      "category": "outras-pecas",
+      "title": "Outras peças",
+      "src": "media/cliente/outras-pecas-2.webp",
+      "small": "media/cliente/outras-pecas-2-640.webp",
+      "width": 1200,
+      "height": 1600,
+      "alt": "Outras peças: fotografia real das peças da Cromeação Primos.",
+      "kind": "real"
+    }
+  ]
+}

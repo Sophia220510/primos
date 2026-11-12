@@ -1,157 +1,232 @@
 import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
-import { company as c, photos, photoById, asset } from "./content";
-import type { Photo } from "./content";
 import {
-  routes,
-  Arrow,
-  Link,
-  Label,
-  PageHead,
-  Picture,
+  business,
+  productPhotos,
+  productGroups,
+  mediaUrl,
+  waLink,
+} from "./final-data";
+import type { ProductPhoto } from "./final-data";
+import {
   Home,
-  Services,
-  Materials,
-  Process,
-  Gallery,
-  Company,
-  Quote,
-  ServiceDetail,
-  Faq,
-  Cta,
-} from "./Sections";
-import type { Route } from "./Sections";
-import "./professional.css";
-import "./refinements.css";
-const getRoute = (): Route => {
-  const name = location.hash.replace(/^#\/?/, "").split("?")[0];
-  return routes.includes(name as Route) ? (name as Route) : "inicio";
+  ProductsPage,
+  ProductDetail,
+  BathsPage,
+  ProcessPage,
+  FounderPage,
+  CompanyPage,
+  ContactPage,
+} from "./components/FinalPages";
+import { Arrow, RouteLink } from "./components/FinalShared";
+import "./final.css";
+
+const aliases: Record<string, string> = {
+  servicos: "banhos",
+  trabalhos: "pecas",
+  cromacao: "banhos?tipo=cromacao",
+  niquelacao: "banhos?tipo=niquelacao",
 };
+const known = [
+  "inicio",
+  "pecas",
+  "banhos",
+  "processo",
+  "mario-reis",
+  "empresa",
+  "contato",
+];
+function resolve() {
+  const raw = location.hash.replace(/^#\/?/, "");
+  const key = aliases[raw] || raw || "inicio";
+  return known.includes(key.split(/[/?]/)[0]) ? key : "inicio";
+}
+const navItems = [
+  { to: "inicio", label: "Início" },
+  { to: "pecas", label: "Peças & aplicações" },
+  { to: "banhos", label: "Banhos & acabamentos" },
+  { to: "processo", label: "Processo" },
+  { to: "mario-reis", label: "Mario Reis" },
+  { to: "empresa", label: "A empresa" },
+  { to: "contato", label: "Contato" },
+];
+function Brand() {
+  return (
+    <RouteLink
+      to="inicio"
+      className="f-brand"
+      aria-label="Cromeação Primos, início"
+    >
+      <img
+        src={mediaUrl(business.logoSmall)}
+        alt="Símbolo CP da Cromeação Primos"
+        width="150"
+        height="150"
+      />
+      <span>
+        CROMEAÇÃO<strong>PRIMOS</strong>
+        <small>ACABAMENTOS METÁLICOS</small>
+      </span>
+    </RouteLink>
+  );
+}
 export default function App() {
-  const [route, setRoute] = useState<Route>(getRoute);
-  const [menu, setMenu] = useState(false);
-  const [active, setActive] = useState<Photo | null>(null);
-  const [progress, setProgress] = useState(0);
-  const dialog = useRef<HTMLDialogElement>(null);
-  const origin = useRef<HTMLButtonElement | null>(null);
-  const menuButton = useRef<HTMLButtonElement>(null);
-  const nav = useRef<HTMLElement>(null);
-  const main = useRef<HTMLElement>(null);
+  const [routeKey, setRouteKey] = useState(resolve),
+    [menu, setMenu] = useState(false),
+    [active, setActive] = useState<ProductPhoto | null>(null);
+  const main = useRef<HTMLElement>(null),
+    nav = useRef<HTMLElement>(null),
+    menuButton = useRef<HTMLButtonElement>(null),
+    dialog = useRef<HTMLDialogElement>(null),
+    origin = useRef<HTMLButtonElement | null>(null);
+  const [page, slug] = routeKey.split("?")[0].split("/");
+  const activePhotos = active
+    ? productPhotos.filter((photo) => photo.category === active.category)
+    : [];
   useEffect(() => {
-    if (
-      !location.hash ||
-      !routes.includes(
-        location.hash.replace(/^#\/?/, "").split("?")[0] as Route,
-      )
-    ) {
-      history.replaceState(
-        null,
-        "",
-        `${location.pathname}${location.search}#/inicio`,
-      );
-    }
-    const change = () => {
-      setRoute(getRoute());
+    const sync = () => {
+      const key = resolve();
+      if (location.hash !== `#/${key}`)
+        history.replaceState(
+          null,
+          "",
+          `${location.pathname}${location.search}#/${key}`,
+        );
+      setRouteKey(key);
       setMenu(false);
       dialog.current?.close();
       window.scrollTo({ top: 0, behavior: "instant" });
     };
-    addEventListener("hashchange", change);
-    return () => removeEventListener("hashchange", change);
+    sync();
+    addEventListener("hashchange", sync);
+    return () => removeEventListener("hashchange", sync);
   }, []);
   useEffect(() => {
-    const titles = {
-      inicio: "Acabamento que valoriza cada peça",
-      contato: "Contato e orçamento",
+    const titles: Record<string, string> = {
+      inicio: "Cromação e niquelação de peças",
+      pecas: slug
+        ? productGroups.find((g) => g.slug === slug)?.name ||
+          "Peças & aplicações"
+        : "Peças & aplicações",
+      banhos: "Banhos & acabamentos",
+      processo: "Processo & cuidado",
+      "mario-reis": "Mario Reis — Nossa história",
       empresa: "A empresa",
-      trabalhos: "Trabalhos e registros",
-      processo: "Nosso processo",
-      niquelacao: "Niquelação",
-      cromacao: "Cromação",
-      servicos: "Serviços",
+      contato: "Contato e orçamento",
     };
-    document.title = `${titles[route]} — Cromeação Primos`;
+    document.title = `${titles[page] || titles.inicio} | Cromeação Primos`;
     main.current?.focus({ preventScroll: true });
-    let last = window.scrollY;
-    let raf = 0;
-    const scroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const y = window.scrollY;
-        document.documentElement.dataset.direction = y < last ? "up" : "down";
-        last = y;
-        const max = document.documentElement.scrollHeight - innerHeight;
-        setProgress(max > 0 ? y / max : 0);
-        document.documentElement.style.setProperty(
-          "--hero-shift",
-          `${Math.min(y * 0.08, 40)}px`,
-        );
-      });
-    };
-    addEventListener("scroll", scroll, { passive: true });
     const observer = new IntersectionObserver(
       (entries) =>
         entries.forEach((e) =>
-          e.target.classList.toggle("in-view", e.isIntersecting),
+          e.target.classList.toggle("f-visible", e.isIntersecting),
         ),
-      { threshold: 0.06 },
+      { threshold: 0.05 },
     );
+    const seen = new WeakSet<Element>();
     const observe = () =>
-      document.querySelectorAll(".motion").forEach((e) => observer.observe(e));
+      main.current?.querySelectorAll(".f-reveal").forEach((el) => {
+        if (!seen.has(el)) {
+          observer.observe(el);
+          seen.add(el);
+        }
+      });
     observe();
-    const mutations = new MutationObserver(observe);
-    mutations.observe(main.current!, { childList: true, subtree: true });
-    document.body.classList.add("enhanced");
-    scroll();
+    const mutation = new MutationObserver(observe);
+    if (main.current)
+      mutation.observe(main.current, { childList: true, subtree: true });
+    document.body.classList.add("f-motion-ready");
+    const type = new URLSearchParams(routeKey.split("?")[1]).get("tipo");
+    const timer = type
+      ? requestAnimationFrame(() =>
+          document
+            .getElementById(type)
+            ?.scrollIntoView({ behavior: "instant", block: "start" }),
+        )
+      : 0;
     return () => {
       observer.disconnect();
-      mutations.disconnect();
-      removeEventListener("scroll", scroll);
-      cancelAnimationFrame(raf);
+      mutation.disconnect();
+      cancelAnimationFrame(timer);
     };
-  }, [route]);
+  }, [routeKey, page, slug]);
+  useEffect(() => {
+    let raf = 0,
+      last = scrollY;
+    const scroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        document.documentElement.style.setProperty(
+          "--f-progress",
+          String(max > 0 ? Math.min(1, Math.max(0, scrollY / max)) : 0),
+        );
+        document.documentElement.dataset.direction =
+          scrollY < last ? "up" : "down";
+        last = scrollY;
+      });
+    };
+    addEventListener("scroll", scroll, { passive: true });
+    scroll();
+    return () => {
+      cancelAnimationFrame(raf);
+      removeEventListener("scroll", scroll);
+    };
+  }, []);
   useEffect(() => {
     if (!menu) return;
     nav.current?.querySelector<HTMLAnchorElement>("a")?.focus();
-    const escape = (e: globalThis.KeyboardEvent) => {
+    const close = (e: globalThis.KeyboardEvent) => {
       if (e.key === "Escape") {
         setMenu(false);
         menuButton.current?.focus();
       }
     };
-    addEventListener("keydown", escape);
-    return () => removeEventListener("keydown", escape);
+    addEventListener("keydown", close);
+    return () => removeEventListener("keydown", close);
   }, [menu]);
   useEffect(() => {
     const el = dialog.current;
     const close = () => {
       setActive(null);
       document.body.style.overflow = "";
-      origin.current?.focus();
+      if (origin.current?.isConnected) origin.current.focus();
     };
     el?.addEventListener("close", close);
-    return () => el?.removeEventListener("close", close);
+    return () => {
+      el?.removeEventListener("close", close);
+      document.body.style.overflow = "";
+    };
   }, []);
-  function open(p: Photo, el: HTMLButtonElement) {
-    origin.current = el;
-    setActive(p);
+  function open(photo: ProductPhoto, trigger: HTMLButtonElement) {
+    origin.current = trigger;
+    setActive(photo);
     dialog.current?.showModal();
     document.body.style.overflow = "hidden";
   }
   function next(offset: number) {
-    if (active)
-      setActive(
-        photos[
-          (photos.findIndex((p) => p.id === active.id) +
-            offset +
-            photos.length) %
-            photos.length
-        ],
+    setActive((current) => {
+      if (!current) return null;
+      const categoryPhotos = productPhotos.filter(
+        (p) => p.category === current.category,
       );
+      return categoryPhotos[
+        (categoryPhotos.findIndex((p) => p.id === current.id) +
+          offset +
+          categoryPhotos.length) %
+          categoryPhotos.length
+      ];
+    });
   }
   function modalKeys(e: KeyboardEvent<HTMLDialogElement>) {
-    if (e.key === "ArrowRight") next(1);
-    if (e.key === "ArrowLeft") next(-1);
+    if (e.key === "ArrowRight") {
+      e.preventDefault();
+      next(1);
+    }
+    if (e.key === "ArrowLeft") {
+      e.preventDefault();
+      next(-1);
+    }
     if (e.key === "Tab") {
       const els = Array.from(
         dialog.current!.querySelectorAll<HTMLElement>("button,a[href]"),
@@ -170,8 +245,8 @@ export default function App() {
   return (
     <>
       <a
-        className="skip"
-        href="#main-content"
+        className="f-skip"
+        href="#main"
         onClick={(e) => {
           e.preventDefault();
           main.current?.focus();
@@ -179,276 +254,192 @@ export default function App() {
       >
         Pular para o conteúdo
       </a>
-      <div
-        className="reading-progress"
-        style={{ transform: `scaleX(${progress})` }}
-      />
-      <header className="header">
-        <Link to="inicio" className="brand">
-          <img
-            src={asset("00.webp")}
-            alt="Logo Cromeação Primos"
-            width="150"
-            height="150"
-          />
-          <span>
-            CROMEAÇÃO<strong>PRIMOS</strong>
-          </span>
-        </Link>
-        <button
-          className="menu-toggle"
-          ref={menuButton}
-          aria-expanded={menu}
-          aria-controls="main-nav"
-          onClick={() => setMenu(!menu)}
-        >
-          {menu ? "Fechar ×" : "Menu ☰"}
-        </button>
-        <nav
-          ref={nav}
-          id="main-nav"
-          className={menu ? "open" : ""}
-          aria-label="Navegação principal"
-        >
-          {[
-            ["inicio", "Início"],
-            ["servicos", "Serviços"],
-            ["trabalhos", "Trabalhos"],
-            ["empresa", "A empresa"],
-          ].map(([to, label]) => (
-            <a
-              href={`#/${to}`}
-              key={to}
-              aria-current={route === to ? "page" : undefined}
-              data-active={
-                route === to ||
-                (to === "servicos" &&
-                  (route === "cromacao" || route === "niquelacao"))
-              }
-              onClick={() => setMenu(false)}
-            >
-              {label}
-            </a>
-          ))}
-          <a
-            href="#/contato"
-            className="nav-cta"
-            aria-current={route === "contato" ? "page" : undefined}
-            onClick={() => setMenu(false)}
-          >
-            Pedir orçamento <Arrow />
-          </a>
-        </nav>
-      </header>
-      <main
-        key={route}
-        id="main-content"
-        ref={main}
-        tabIndex={-1}
-        className="page-enter"
-      >
-        {route === "inicio" ? (
-          <Home onOpen={open} />
-        ) : route === "servicos" ? (
-          <>
-            <PageHead
-              tag="NOSSOS SERVIÇOS"
-              title={
-                <>
-                  Cromação e niquelação.
-                  <br />
-                  <em>Conheça os serviços.</em>
-                </>
-              }
-              text="Conheça os dois serviços divulgados pela Cromeação Primos e entenda como começar a consulta sobre a sua peça."
-            />
-            <Services full />
-            <Materials />
-            <Process />
-            <Cta />
-          </>
-        ) : route === "cromacao" || route === "niquelacao" ? (
-          <ServiceDetail route={route} />
-        ) : route === "trabalhos" ? (
-          <>
-            <PageHead
-              tag="GALERIA DE TRABALHOS"
-              title={
-                <>
-                  O trabalho aparece
-                  <br />
-                  <em>nos detalhes.</em>
-                </>
-              }
-              text="Fotografias e frames de vídeos publicados pela própria empresa. Explore as peças e os bastidores, amplie as imagens e consulte as publicações originais."
-            />
-            <Gallery full onOpen={open} />
-            <Cta />
-          </>
-        ) : route === "processo" ? (
-          <>
-            <PageHead
-              tag="BASTIDORES & PROCESSO"
-              title={
-                <>
-                  Entre a peça
-                  <br />
-                  <em>e o acabamento.</em>
-                </>
-              }
-              text="O trabalho visto por dentro, a partir dos registros públicos que a Cromeação Primos compartilha."
-            />
-            <Process full />
-            <section className="process-feature wrap motion">
-              <Picture id="06" />
-              <div>
-                <Label>GANCHEIRA, SECAGEM & EMBALAGEM</Label>
-                <h2>
-                  Depois dos banhos,
-                  <br />
-                  <em>o trabalho continua.</em>
-                </h2>
-                <p>
-                  Uma publicação de março de 2023 documenta as peças na
-                  gancheira, na secagem e embaladas. São registros reais do
-                  trabalho da empresa, reunidos em uma mesma imagem.
-                </p>
-                <a
-                  className="text-link"
-                  href={photoById("06").source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Consultar publicação original <Arrow />
-                </a>
-              </div>
-            </section>
-            <Cta />
-          </>
-        ) : route === "empresa" ? (
-          <>
-            <PageHead
-              tag="A CROMEAÇÃO PRIMOS"
-              title={
-                <>
-                  Desde 2002.
-                  <br />
-                  <em>Uma história em metal.</em>
-                </>
-              }
-              text="Cromação e niquelação de peças metálicas. Conheça a empresa a partir da sua atuação e dos seus registros."
-            />
-            <Company full />
-            <Process />
-            <Cta />
-          </>
-        ) : (
-          <>
-            <PageHead
-              tag="CONTATO E ORÇAMENTO"
-              title={
-                <>
-                  Solicite um orçamento.
-                  <br />
-                  <em>Conte sobre a sua peça.</em>
-                </>
-              }
-              text="Converse direto pelo WhatsApp ou organize os detalhes da peça para solicitar uma avaliação."
-            />
-            <Quote />
-            <Faq />
-          </>
-        )}
-      </main>
-      <footer>
-        <div className="footer-top wrap">
-          <Link to="inicio" className="brand">
-            <img src={asset("00.webp")} alt="" width="150" height="150" />
-            <span>
-              CROMEAÇÃO<strong>PRIMOS</strong>
-            </span>
-          </Link>
-          <p>
-            Metal. Superfície.
-            <br />
-            Novas possibilidades.
-          </p>
-          <a
-            className="footer-instagram"
-            href={c.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @cromeacao_primos <Arrow />
-          </a>
-        </div>
-        <div className="footer-grid wrap">
+      <div className="f-reading-progress" />
+      <div className="f-contact-bar">
+        <div className="f-container">
+          <span>CROMAÇÃO & NIQUELAÇÃO</span>
           <div>
-            <h3>Vamos conversar.</h3>
+            <a href={`mailto:${business.email}`}>{business.email}</a>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer">
+              WhatsApp {business.phone}
+            </a>
             <a
-              href={`https://wa.me/${c.whatsapp}`}
+              href={business.instagram}
               target="_blank"
               rel="noopener noreferrer"
             >
-              {c.phone} <Arrow />
-            </a>
-            <p>WhatsApp divulgado no perfil oficial.</p>
-          </div>
-          <div>
-            <span>EXPLORE</span>
-            <Link to="inicio">Início</Link>
-            <Link to="empresa">A empresa</Link>
-            <Link to="trabalhos">Trabalhos reais</Link>
-            <Link to="processo">Processo</Link>
-          </div>
-          <div>
-            <span>SERVIÇOS</span>
-            <Link to="cromacao">Cromação</Link>
-            <Link to="niquelacao">Niquelação</Link>
-            <Link to="contato">Solicitar orçamento</Link>
-          </div>
-          <div>
-            <span>ACOMPANHE</span>
-            <a href={c.instagram} target="_blank" rel="noopener noreferrer">
               Instagram <Arrow />
             </a>
-            <button
-              onClick={() =>
-                scrollTo({
-                  top: 0,
-                  behavior: matchMedia("(prefers-reduced-motion: reduce)")
-                    .matches
-                    ? "auto"
-                    : "smooth",
-                })
-              }
-            >
-              Voltar ao topo ↑
-            </button>
           </div>
         </div>
-        <div className="footer-word wrap" aria-hidden="true">
-          PRIMOS<span>·</span>
+      </div>
+      <header className="f-header">
+        <div className="f-masthead f-container">
+          <div className="f-masthead-note">
+            <span>NO RAMO DESDE 1983</span>
+            <strong>
+              A experiência encontra
+              <br />o acabamento.
+            </strong>
+          </div>
+          <Brand />
+          <div className="f-masthead-action">
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="f-header-consult"
+            >
+              Converse com a Primos <Arrow />
+            </a>
+            <span>UNIDADES E LOTES</span>
+          </div>
+          <button
+            ref={menuButton}
+            className="f-menu-toggle"
+            onClick={() => setMenu(!menu)}
+            aria-expanded={menu}
+            aria-controls="f-navigation"
+          >
+            {menu ? "Fechar ×" : "Menu ☰"}
+          </button>
         </div>
-        <div className="footer-bottom wrap">
-          <span>
-            {c.legalName} · Desde {c.since}
-          </span>
-          <span>Prévia para apresentação</span>
+        <nav
+          ref={nav}
+          id="f-navigation"
+          className={menu ? "f-navigation f-menu-open" : "f-navigation"}
+          aria-label="Navegação principal"
+        >
+          {navItems.map((item) => (
+            <RouteLink
+              key={item.to}
+              to={item.to}
+              aria-current={page === item.to ? "page" : undefined}
+              onClick={() => setMenu(false)}
+            >
+              {item.label}
+            </RouteLink>
+          ))}
+          <RouteLink
+            to="contato"
+            className="f-nav-quote"
+            onClick={() => setMenu(false)}
+          >
+            Orçamento <Arrow />
+          </RouteLink>
+        </nav>
+      </header>
+      <main id="main" ref={main} tabIndex={-1} key={routeKey}>
+        {page === "inicio" ? (
+          <Home />
+        ) : page === "pecas" ? (
+          slug ? (
+            <ProductDetail slug={slug} onOpen={open} />
+          ) : (
+            <ProductsPage />
+          )
+        ) : page === "banhos" ? (
+          <BathsPage />
+        ) : page === "processo" ? (
+          <ProcessPage />
+        ) : page === "mario-reis" ? (
+          <FounderPage />
+        ) : page === "empresa" ? (
+          <CompanyPage />
+        ) : (
+          <ContactPage />
+        )}
+      </main>
+      <footer className="f-footer">
+        <div className="f-container">
+          <div className="f-footer-top">
+            <Brand />
+            <p>
+              Da experiência no ramo
+              <br />
+              ao cuidado com a sua peça.
+            </p>
+            <RouteLink to="contato" className="f-button">
+              Vamos conversar <Arrow />
+            </RouteLink>
+          </div>
+          <div className="f-footer-columns">
+            <div>
+              <EyebrowFooter>CONTATO</EyebrowFooter>
+              <a href={waLink()} target="_blank" rel="noopener noreferrer">
+                {business.phone}
+              </a>
+              <a href={`mailto:${business.email}`}>{business.email}</a>
+              <a
+                href={business.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @cromeacao_primos <Arrow />
+              </a>
+            </div>
+            <div>
+              <EyebrowFooter>EXPLORE</EyebrowFooter>
+              <RouteLink to="inicio">Início</RouteLink>
+              <RouteLink to="pecas">Peças & aplicações</RouteLink>
+              <RouteLink to="banhos">Banhos & acabamentos</RouteLink>
+              <RouteLink to="processo">Processo</RouteLink>
+            </div>
+            <div>
+              <EyebrowFooter>NOSSA HISTÓRIA</EyebrowFooter>
+              <RouteLink to="mario-reis">Mario Reis</RouteLink>
+              <RouteLink to="empresa">A Cromeação Primos</RouteLink>
+              <RouteLink to="empresa">Licenças e responsabilidade</RouteLink>
+            </div>
+            <div>
+              <EyebrowFooter>O SEU PEDIDO</EyebrowFooter>
+              <RouteLink to="pecas/hastes">Hastes de panela</RouteLink>
+              <RouteLink to="contato">Solicitar orçamento</RouteLink>
+              <button
+                onClick={() =>
+                  scrollTo({
+                    top: 0,
+                    behavior: matchMedia("(prefers-reduced-motion: reduce)")
+                      .matches
+                      ? "auto"
+                      : "smooth",
+                  })
+                }
+              >
+                Voltar ao topo ↑
+              </button>
+            </div>
+          </div>
+          <div className="f-footer-type" aria-hidden="true">
+            PRIMOS
+          </div>
+          <div className="f-footer-bottom">
+            <span>{business.legalName} · Desde 2002</span>
+            <span>Fotografias reais da empresa.</span>
+          </div>
         </div>
       </footer>
+      <a
+        className="f-floating-wa"
+        href={waLink()}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Conversar com a Primos no WhatsApp"
+      >
+        <span aria-hidden="true">↗</span>Fale com a Primos
+      </a>
       <dialog
         ref={dialog}
-        aria-labelledby="modal-title"
-        className="lightbox"
+        className="f-lightbox"
+        aria-labelledby="f-modal-title"
         onKeyDown={modalKeys}
         onClick={(e) => {
           if (e.target === e.currentTarget) dialog.current?.close();
         }}
       >
         <button
-          className="modal-close"
           autoFocus
+          className="f-modal-close"
           onClick={() => dialog.current?.close()}
           aria-label="Fechar imagem ampliada"
         >
@@ -456,37 +447,24 @@ export default function App() {
         </button>
         {active && (
           <>
-            <div className="modal-image">
-              <img
-                src={asset(active.file)}
-                alt={active.alt}
-                width={active.width}
-                height={active.height}
-              />
-            </div>
-            <div className="modal-info">
+            <img
+              src={mediaUrl(active.src)}
+              alt={active.alt}
+              width={active.width}
+              height={active.height}
+            />
+            <div className="f-modal-info">
               <div>
-                <span className="index">
-                  {active.frame ? "FRAME DE VÍDEO" : "FOTO REAL"} ·{" "}
-                  {active.date}
-                </span>
-                <h2 id="modal-title">{active.title}</h2>
-                <p>{active.description}</p>
-                <a
-                  href={active.source}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ver publicação original <Arrow />
-                </a>
+                <p>FOTOGRAFIA REAL · CROMEAÇÃO PRIMOS</p>
+                <h2 id="f-modal-title">{active.title}</h2>
               </div>
-              <div className="modal-controls">
+              <div className="f-modal-controls">
                 <button aria-label="Imagem anterior" onClick={() => next(-1)}>
                   ←
                 </button>
                 <span>
-                  {photos.findIndex((p) => p.id === active.id) + 1} /{" "}
-                  {photos.length}
+                  {activePhotos.findIndex((p) => p.id === active.id) + 1} /{" "}
+                  {activePhotos.length}
                 </span>
                 <button aria-label="Próxima imagem" onClick={() => next(1)}>
                   →
@@ -498,4 +476,7 @@ export default function App() {
       </dialog>
     </>
   );
+}
+function EyebrowFooter({ children }: { children: string }) {
+  return <span className="f-footer-label">{children}</span>;
 }
