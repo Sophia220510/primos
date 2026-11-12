@@ -2200,3 +2200,19 @@ h4 {
     transform: scaleX(1);
   }
 }
+/* Motion is local and transient. Content stays visible without animation. */
+.f-motion-ready .r-catalog-item.f-reveal { opacity:1; transform:none; transition:none; }
+@media(prefers-reduced-motion:no-preference) {
+ .r-hero-image { animation:primos-photo-in .45s ease-out; }
+ .r-finish-visual { animation:primos-photo-in .35s ease-out; }
+ .f-page-intro h1 { animation:r-title-enter .5s cubic-bezier(.2,.65,.3,1); }
+ .f-page-intro>p:not(.f-eyebrow) { animation:r-title-enter .55s cubic-bezier(.2,.65,.3,1); }
+ .f-navigation.f-menu-open { animation:primos-menu-in .22s ease-out; }
+ .f-lightbox[open]>img { animation:primos-photo-in .25s ease-out; }
+ .r-hero-previews button { transition:transform .25s,border-color .25s; }
+ .r-hero-previews button:hover { transform:translateY(-4px); }
+ .r-catalog-open,.f-button>span,.f-text-link>span { transition:transform .22s ease-out; }
+ .f-button:hover>span,.f-text-link:hover>span { transform:translate(3px,-3px); }
+}
+@keyframes primos-photo-in { from { opacity:.35; } to { opacity:1; } }
+@keyframes primos-menu-in { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }

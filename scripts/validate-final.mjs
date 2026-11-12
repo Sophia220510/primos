@@ -280,6 +280,13 @@ const moving = await browser.newPage({
   viewport: { width: 1440, height: 1000 },
   reducedMotion: "no-preference",
 });
+await moving.addInitScript(() => {
+  const animate = Element.prototype.animate;
+  Element.prototype.animate = function (...args) {
+    this.__motionStarts = (this.__motionStarts || 0) + 1;
+    return animate.apply(this, args);
+  };
+});
 await moving.goto("http://127.0.0.1:5175/#/inicio");
 await moving.waitForTimeout(1000);
 assert.notEqual(
@@ -289,17 +296,54 @@ assert.notEqual(
 const card = moving.locator(".r-catalog-item").first();
 await card.scrollIntoViewIfNeeded();
 await expect(card).toHaveClass(/f-visible/);
+await expect
+  .poll(() => card.evaluate((el) => el.__motionStarts || 0))
+  .toBeGreaterThan(0);
+const firstEntry = await card.evaluate((el) => el.__motionStarts);
 await moving.evaluate(() =>
   scrollTo({ top: document.documentElement.scrollHeight, behavior: "instant" }),
 );
 await expect(card).toHaveClass(/f-visible/);
 await card.scrollIntoViewIfNeeded();
 await expect(card).toHaveClass(/f-visible/);
+await expect
+  .poll(() => card.evaluate((el) => el.__motionStarts || 0))
+  .toBeGreaterThan(firstEntry);
+await moving.locator(".r-introduction h2").scrollIntoViewIfNeeded();
+await expect
+  .poll(() =>
+    moving
+      .locator(".r-introduction h2")
+      .evaluate((el) => el.__motionStarts || 0),
+  )
+  .toBeGreaterThan(0);
+assert.equal(
+  await moving
+    .locator(".r-introduction")
+    .evaluate((el) => el.getAnimations().length),
+  0,
+  "Entire sections must not become animated layers",
+);
+await moving.emulateMedia({ reducedMotion: "reduce" });
+await expect
+  .poll(() =>
+    moving.evaluate(
+      () =>
+        document
+          .getAnimations()
+          .filter(
+            (a) =>
+              a.playState === "running" && a.effect?.target?.closest("main"),
+          ).length,
+    ),
+  )
+  .toBe(0);
+await moving.emulateMedia({ reducedMotion: "no-preference" });
 await moving.evaluate(() => scrollTo({ top: 0, behavior: "instant" }));
 await moving.waitForTimeout(900);
 await moving.screenshot({ path: ".playwright/final/abertura-desktop.png" });
 assert.deepEqual(errors, []);
 console.log(
-  "Abertura, revelação única sem piscar na rolagem, movimento reduzido, rotas antigas e ausência de erros verificados.",
+  "Abertura, animações locais na descida e subida, movimento reduzido, rotas antigas e ausência de erros verificados.",
 );
 await browser.close();

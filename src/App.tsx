@@ -1,3 +1,4 @@
+import { observeRevealMotion } from "./reveal-motion";
 import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
 import {
@@ -116,30 +117,9 @@ export default function App() {
     };
     document.title = `${titles[page] || titles.inicio} | Cromeação Primos`;
     main.current?.focus({ preventScroll: true });
-    const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.target.classList.contains("r-moving-band")) {
-            e.target.classList.toggle("f-visible", e.isIntersecting);
-          } else if (e.isIntersecting) {
-            e.target.classList.add("f-visible");
-            observer.unobserve(e.target);
-          }
-        }),
-      { threshold: 0.05 },
-    );
-    const seen = new WeakSet<Element>();
-    const observe = () =>
-      main.current?.querySelectorAll(".f-reveal").forEach((el) => {
-        if (!seen.has(el)) {
-          observer.observe(el);
-          seen.add(el);
-        }
-      });
-    observe();
-    const mutation = new MutationObserver(observe);
-    if (main.current)
-      mutation.observe(main.current, { childList: true, subtree: true });
+    const stopMotion = main.current
+      ? observeRevealMotion(main.current)
+      : undefined;
     document.body.classList.add("f-motion-ready");
     const type = new URLSearchParams(routeKey.split("?")[1]).get("tipo");
     const timer = type
@@ -150,8 +130,7 @@ export default function App() {
         )
       : 0;
     return () => {
-      observer.disconnect();
-      mutation.disconnect();
+      stopMotion?.();
       cancelAnimationFrame(timer);
     };
   }, [routeKey, page, slug]);
