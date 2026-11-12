@@ -3,8 +3,8 @@
     {
       "slug": "hastes",
       "name": "Hastes de panela",
-      "caption": "Nosso carro-chefe",
-      "description": "Acabamento de hastes de panela, o carro-chefe da Cromeação Primos. Atendimento em unidades e lotes, conforme a necessidade de cada pedido.",
+      "caption": "Especialistas em hastes de panela",
+      "description": "Especialistas no acabamento de hastes de panela. Atendimento em unidades e lotes, conforme a necessidade de cada pedido.",
       "cover": "hastes-1",
       "count": 6
     },
@@ -58,11 +58,11 @@
     },
     {
       "slug": "outras-pecas",
-      "name": "Outras peças",
-      "caption": "Seu projeto começa na conversa",
-      "description": "Outros componentes metálicos também fazem parte dos registros da empresa. Consulte a equipe sobre a peça e o material.",
-      "cover": "outras-pecas-1",
-      "count": 2
+      "name": "Molas",
+      "caption": "Detalhes de forma e acabamento",
+      "description": "Acabamento de molas conforme o material e a aplicação. Envie fotos e medidas para consultar o tratamento com a Primos.",
+      "cover": "outras-pecas-2",
+      "count": 1
     }
   ],
   "photos": [
@@ -309,25 +309,14 @@
       "kind": "real"
     },
     {
-      "id": "outras-pecas-1",
-      "category": "outras-pecas",
-      "title": "Outras peças",
-      "src": "media/cliente/outras-pecas-1.webp",
-      "small": "media/cliente/outras-pecas-1-640.webp",
-      "width": 1200,
-      "height": 1600,
-      "alt": "Outras peças: fotografia real das peças da Cromeação Primos.",
-      "kind": "real"
-    },
-    {
       "id": "outras-pecas-2",
       "category": "outras-pecas",
-      "title": "Outras peças",
+      "title": "Molas",
       "src": "media/cliente/outras-pecas-2.webp",
       "small": "media/cliente/outras-pecas-2-640.webp",
       "width": 1200,
       "height": 1600,
-      "alt": "Outras peças: fotografia real das peças da Cromeação Primos.",
+      "alt": "Molas com acabamento prateado: fotografia real das peças da Cromeação Primos.",
       "kind": "real"
     }
   ]

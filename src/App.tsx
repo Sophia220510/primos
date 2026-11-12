@@ -66,7 +66,7 @@ function Brand() {
       />
       <span>
         CROMEAÇÃO<strong>PRIMOS</strong>
-        <small>ACABAMENTOS METÁLICOS</small>
+        <small>CROMAÇÃO & NIQUELAÇÃO</small>
       </span>
     </RouteLink>
   );
@@ -237,7 +237,7 @@ export default function App() {
       <header className="f-header">
         <div className="f-masthead f-container">
           <div className="f-masthead-note">
-            <span>NO RAMO DESDE 1983</span>
+            <span>MARIO REIS · NO RAMO DESDE 1983</span>
             <strong>
               A experiência encontra
               <br />o acabamento.
@@ -375,7 +375,7 @@ export default function App() {
             PRIMOS
           </div>
           <div className="f-footer-bottom">
-            <span>{business.legalName} · Desde 2002</span>
+            <span>{business.legalName}</span>
             <span>Fotografias reais da empresa.</span>
           </div>
         </div>

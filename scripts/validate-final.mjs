@@ -150,7 +150,7 @@ for (const width of [360, 390, 768, 1440]) {
       .click();
     await page.waitForURL("**/#/mario-reis");
   }
-  for (const year of ["1979", "1983", "2002", "Hoje"])
+  for (const year of ["1979", "1983", "Hoje"])
     await expect(
       page.locator(".f-timeline article>span").filter({ hasText: year }),
     ).toBeVisible();

@@ -4,17 +4,17 @@
 
 - E-mail: cromeacaoprimos@gmail.com (captura da conversa com a empresa).
 - Ferro, metais e zamac; atendimento em unidades e lotes.
-- Hastes de panela como carro-chefe.
-- Licenças e autorizações do Exército, Polícia Civil, Polícia Federal e Corpo de Bombeiros. Posteriormente foram recebidos cinco comprovantes, lidos e descritos em LICENCAS.md, com períodos apresentados no site. A página não cria selos oficiais ou certificações técnicas do acabamento.
-- Mario Reis é pernambucano, chegou a São Paulo em 1979, começou na cromeação em 1983 e iniciou seu negócio em 2002 com dois sócios. Hoje conduz o negócio sem os sócios iniciais. É pai de Laís e Bernardo.
+- A revisão dos áudios da Laís definiu a apresentação “especialistas em hastes de panela”.
+- Licenças e autorizações do Exército, Polícia Civil, Polícia Federal e Corpo de Bombeiros. Cinco comprovantes foram lidos e descritos em LICENCAS.md. A apresentação pública mostra apenas órgãos e tipos, sem datas ou afirmação de vigência atual.
+- Mario Reis é pernambucano, chegou a São Paulo em 1979 e começou na cromeação em 1983. Está à frente da empresa e é pai de Laís e Bernardo. Correção expressa da Laís: Mario não fundou a Primos. A empresa está no mercado desde 2002. Não apresentar sócios ou a história da fundação no site.
 
 ## Mídia
 
-Recebidas 59 imagens: 58 nos nove ZIPs listados pelo usuário e uma JPEG avulsa. Selecionadas 24 fotos de peças e três fotos de Mario, priorizando variedade e definição. Imagens com textos sobrepostos, duplicatas e versões muito semelhantes não entraram na seleção.
+Recebidas 59 imagens: 58 nos nove ZIPs listados pelo usuário e uma JPEG avulsa. Após revisão da Laís, permanecem 23 fotos de peças e três fotos de Mario. A imagem das molas amarelas foi retirada da área pública por mostrar a peça antes do serviço e sugerir zincagem, que a empresa não oferece.
 
 O arquivo ORIGEM-FOTOS.json relaciona cada seleção ao nome do arquivo e ao ZIP original. Os originais locais permanecem em .playwright/client-originals-2026-11 (não enviados ao Git). As peças apenas passaram por orientação EXIF, redução proporcional e compressão WebP. Não foram geradas peças, reflexos ou trabalhos artificiais.
 
-Grupos identificados pelas capturas enviadas e observação das fotos: hastes, pesos de panela de pressão, dobradiças/componentes, torneiras, canoplas, flexíveis, guidões e outras peças. Os componentes helicoidais foram deixados em "Outras peças", pois não foi fornecida sua denominação comercial. Não foi inferido um banho apenas pela cor da fotografia.
+Grupos identificados pelas capturas e áudios: hastes, pesos de panela de pressão, dobradiças/componentes, torneiras, canoplas, flexíveis, guidões e molas. A categoria antes chamada “Outras peças” foi identificada como molas pela Laís; o endereço antigo permanece funcionando. Não foi inferido um banho apenas pela cor da fotografia.
 
 ## Retrato de Mario
 

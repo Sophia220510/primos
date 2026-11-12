@@ -6,7 +6,7 @@ const slides = [
   {
     photo: "hastes-3",
     title: "Hastes de panela",
-    label: "01 — Nosso carro-chefe",
+    label: "01 — Especialistas em hastes de panela",
     slug: "hastes",
   },
   {
@@ -33,12 +33,12 @@ export function Showcase() {
       </div>
       <div className="r-hero-top">
         <span>CROMEAÇÃO PRIMOS</span>
-        <span>ACABAMENTOS METÁLICOS / DESDE 2002</span>
+        <span>CROMAÇÃO & NIQUELAÇÃO / UNIDADES & LOTES</span>
       </div>
       <div className="r-hero-content">
-        <Eyebrow>Da unidade ao lote. Do metal ao detalhe.</Eyebrow>
+        <Eyebrow>Ferro, metais e zamac. Da unidade ao lote.</Eyebrow>
         <h1>
-          O metal é o começo.
+          Cada peça importa.
           <br />
           <em>
             O acabamento
@@ -53,15 +53,22 @@ export function Showcase() {
           </p>
           <div className="r-cta-actions">
             <Action>Quero orçar minha peça</Action>
-            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="f-text-link">Enviar fotos no WhatsApp <Arrow /></a>
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="f-text-link"
+            >
+              Enviar fotos no WhatsApp <Arrow />
+            </a>
           </div>
         </div>
         <div className="r-hero-facts">
           <span>
-            <strong>1983</strong>Experiência no ramo
+            <strong>40+ anos</strong>Experiência de Mario Reis
           </span>
           <span>
-            <strong>2002</strong>Fundação da Primos
+            <strong>Cr + Ni</strong>Cromação e niquelação
           </span>
           <span>
             <strong>1 ou +</strong>Unidades e lotes
@@ -132,9 +139,9 @@ export function Introduction() {
         <span className="r-years">
           1983
           <span>
-            O início de uma trajetória
+            Mario Reis no ramo
             <br />
-            no acabamento de metais.
+            de acabamentos.
           </span>
         </span>
         <div className="r-intro-mosaic">
@@ -162,8 +169,8 @@ export function Introduction() {
             aplicação.
           </p>
           <p>
-            À frente da empresa está Mario Reis. No ramo desde 1983, ele fundou
-            a Primos em 2002 e continua próximo do trabalho, todos os dias.
+            A Primos está no mercado desde 2002. À frente da empresa está Mario
+            Reis, no ramo desde 1983 e próximo do trabalho, todos os dias.
           </p>
         </div>
         <RouteLink to="empresa" className="f-text-link">
@@ -241,7 +248,10 @@ export function Collection({ featured = false }: { featured?: boolean }) {
               className="r-catalog-item f-reveal"
             >
               <div className="r-catalog-photo">
-                <ProductImage id={g.cover} sizes="(max-width: 800px) 45vw, (max-width: 1100px) 30vw, 23vw" />
+                <ProductImage
+                  id={g.cover}
+                  sizes="(max-width: 800px) 45vw, (max-width: 1100px) 30vw, 23vw"
+                />
                 <span className="r-catalog-open">
                   <Arrow />
                 </span>
@@ -251,7 +261,9 @@ export function Collection({ featured = false }: { featured?: boolean }) {
               </div>
               <div className="r-catalog-caption">
                 <span>
-                  {g.slug === "hastes" ? "NOSSO CARRO-CHEFE" : g.caption}
+                  {g.slug === "hastes"
+                    ? "ESPECIALISTAS EM HASTES DE PANELA"
+                    : g.caption}
                 </span>
                 <h3>{g.name}</h3>
               </div>

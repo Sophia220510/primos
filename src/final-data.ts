@@ -6,8 +6,7 @@ export const business = {
   phone: "(11) 91493-5874",
   whatsapp: "5511914935874",
   instagram: "https://www.instagram.com/cromeacao_primos/",
-  since: "2002",
-  founder: "Mario Reis",
+  representative: "Mario Reis",
   portrait: "media/cliente/mario-retrato.webp",
   portraitOriginal: "media/cliente/mario-original.webp",
   portraitWork: "media/cliente/mario-trabalho.webp",
@@ -89,11 +88,6 @@ export const timeline = [
     year: "1983",
     title: "O começo na cromeação",
     text: "Mario começa a trabalhar no ramo. É o início de uma experiência construída no dia a dia, perto das peças e dos processos.",
-  },
-  {
-    year: "2002",
-    title: "O próprio negócio",
-    text: "Mario inicia o seu negócio de cromeação. Nasce a história da Primos.",
   },
   {
     year: "Hoje",

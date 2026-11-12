@@ -1,6 +1,6 @@
 import type { ReactNode, AnchorHTMLAttributes } from "react";
 import { business, mediaUrl, getPhoto, waLink } from "../final-data";
-import { licenses, documentationIsCurrent } from "../licenses";
+import { licenses } from "../licenses";
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export function RouteLink({
   to,
@@ -105,11 +105,23 @@ export function FinalCta() {
             <br />
             <em>um novo acabamento.</em>
           </h2>
-          <p>Envie fotos da sua peça e a quantidade desejada. Fale direto com a Primos para avaliar o serviço e pedir seu orçamento.</p>
+          <p>
+            Envie fotos da sua peça e a quantidade desejada. Fale direto com a
+            Primos para avaliar o serviço e pedir seu orçamento.
+          </p>
         </div>
         <div className="r-cta-actions">
-          <a className="f-button" href={waLink()} target="_blank" rel="noopener noreferrer">Enviar fotos no WhatsApp <Arrow /></a>
-          <RouteLink to="contato" className="f-text-link">Preencher meu pedido <Arrow /></RouteLink>
+          <a
+            className="f-button"
+            href={waLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Enviar fotos no WhatsApp <Arrow />
+          </a>
+          <RouteLink to="contato" className="f-text-link">
+            Preencher meu pedido <Arrow />
+          </RouteLink>
           <span>Uma unidade ou um lote: comece pela sua peça.</span>
         </div>
       </div>
@@ -122,9 +134,7 @@ export function LicenseBlock() {
       <div>
         <Eyebrow>DOCUMENTAÇÃO & RESPONSABILIDADE</Eyebrow>
         <h2>
-          {documentationIsCurrent()
-            ? "Licenças em dia."
-            : "Licenças e autorizações."}
+          Licenças e autorizações.
           <br />
           <em>Trabalho responsável.</em>
         </h2>
@@ -143,7 +153,6 @@ export function LicenseBlock() {
               <strong>{license.authority}</strong>
               <span>{license.document}</span>
             </div>
-            <span>{license.validityLabel}</span>
           </div>
         ))}
       </div>
@@ -156,13 +165,13 @@ export function FounderPreview() {
       <div className="f-founder-photo">
         <img
           src={mediaUrl(business.portrait)}
-          alt="Mario Reis, fundador da Cromeação Primos, sorrindo com sua camisa azul e óculos."
+          alt="Mario Reis, à frente da Cromeação Primos, sorrindo com sua camisa azul e óculos."
           width="1200"
           height="1600"
           loading="lazy"
         />
         <span>
-          Mario Reis<span>Fundador · no ramo desde 1983</span>
+          Mario Reis<span>Mais de 40 anos de experiência</span>
         </span>
       </div>
       <div>
@@ -176,9 +185,8 @@ export function FounderPreview() {
           Por trás de cada acabamento, uma história construída com trabalho.
         </p>
         <p>
-          Mario Reis começou na cromeação em 1983. Em 2002, deu o próximo passo
-          e iniciou o próprio negócio. Hoje, segue à frente da Primos, com a
-          experiência de quem conhece o trabalho de perto.
+          Mario Reis começou na cromeação em 1983. Hoje, segue à frente da
+          Primos, com a experiência de quem conhece o trabalho de perto.
         </p>
         <Action to="mario-reis" secondary>
           Conheça a história de Mario

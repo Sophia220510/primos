@@ -20,12 +20,12 @@ Foram lidos os cinco PDFs enviados pelo cliente. As páginas digitalizadas foram
 
 ## Aplicação no site
 
-A seção mostra os cinco tipos de documento, os quatro órgãos e os períodos descritos nos comprovantes. O título atual é “Licenças em dia. Trabalho responsável.” O escopo é a documentação apresentada, sem uma declaração irrestrita de cumprimento de toda e qualquer obrigação legal e sem confundir licenciamento de atividades/produtos controlados ou do imóvel com certificação de qualidade do acabamento.
+A revisão dos áudios da Laís determinou a apresentação somente dos cinco tipos de documento e dos quatro órgãos, sem datas, validade, exercício ou triênio. O título é “Licenças e autorizações. Trabalho responsável.” A apresentação não afirma vigência atual nem confunde licenciamento com certificação de qualidade do acabamento. Os períodos acima permanecem apenas como registro da conferência das cópias recebidas.
 
 A conferência foi feita sobre as cópias recebidas, sem consulta de autenticidade ou de situação cadastral em tempo real nos órgãos emissores. Os PDFs integrais não foram publicados: a solicitação foi apresentar as licenças da empresa, e não disponibilizar para download anexos de produtos controlados, assinaturas e outros dados dos comprovantes.
 
 ## Manutenção
 
-Dados exibidos em `src/licenses.ts`. O alvará é do exercício de 2026; o documento prevê renovação até o último dia útil de fevereiro do exercício seguinte. O site deixa de anunciar globalmente “em dia” ao sair do período anual exibido, usando o título neutro “Licenças e autorizações”. Essa troca é conservadora e não interpreta 31/12/2026 como data de vencimento legal do alvará.
+Os dados de origem ficam em `src/licenses.ts`. A interface usa apenas órgão e tipo. Não há título “em dia” nem mudança de texto baseada em calendário. A revisão atual não verificou a vigência nos portais dos órgãos.
 
 As datas e períodos devem ser atualizados com as próximas renovações. Os períodos apresentados abrangem 12/11/2026; isso não atesta mudanças de situação posteriores à emissão.

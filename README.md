@@ -16,8 +16,8 @@ Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execu
 ## Páginas e jornada
 
 - Início: abertura fotográfica com três prévias clicáveis, faixa animada com pausa, mosaicos, oito categorias de peças, carro-chefe, explorador dos dois banhos, jornada ilustrada do pedido, Mario, licenças e dúvidas.
-- Peças e aplicações: catálogo filtrável por aplicação, oito categorias com página própria e galeria ampliável. São 24 fotografias reais selecionadas.
-- Hastes de panela: destaque como carro-chefe, com seis registros.
+- Peças e aplicações: catálogo filtrável por aplicação, oito categorias com página própria e galeria ampliável. São 23 fotografias reais selecionadas após a retirada da foto das molas amarelas.
+- Hastes de panela: apresentação como especialistas no acabamento, com seis registros.
 - Banhos e acabamentos: cromação e niquelação, com comparação dos serviços e orientação para o orçamento.
 - Processo: seis etapas usuais, da avaliação da peça à conferência do acabamento, em linguagem acessível.
 - Mario Reis: retrato com tratamento de fundo, biografia, linha do tempo e fotos reais de trabalho.
@@ -46,7 +46,7 @@ A apresentação usa tipografia de leitura ampliada, seções compactas, entrada
 
 [Conteúdo recebido e pendências](docs/CONTEUDO-FINAL.md), [origem das fotos](docs/ORIGEM-FOTOS.json), [referências visuais](docs/REFERENCIAS-VISUAIS.md) e [prompt do tratamento do retrato](docs/PROMPT-RETRATO.md).
 
-**Escopo final definido pelo cliente:** cromação e niquelação são os dois banhos apresentados. O processo foi concluído como uma explicação das etapas usuais do tratamento, ajustadas conforme material e aplicação: [base editorial e técnica](docs/PROCESSO-EDITORIAL.md). Não foram inventados banhos adicionais, prazos, garantias ou certificações. As licenças estão apresentadas pelos tipos e períodos dos cinco comprovantes: [conferência e manutenção](docs/LICENCAS.md). Os PDFs integrais não ficam públicos nem têm links de download.
+**Escopo final definido pelo cliente:** cromação e niquelação são os dois banhos apresentados. O processo explica as etapas usuais, ajustadas conforme material e aplicação: [base editorial e técnica](docs/PROCESSO-EDITORIAL.md). As licenças aparecem por órgão e tipo, sem datas ou afirmação de vigência atual: [conferência e manutenção](docs/LICENCAS.md). Os PDFs integrais não ficam públicos nem têm links de download.
 
 O e-mail informado é cromeacaoprimos@gmail.com. O WhatsApp permanece o canal comercial já confirmado no perfil. As fotografias de peças não tiveram conteúdo alterado; apenas o fundo do retrato de Mario foi tratado com image_gen, com o original preservado e a edição documentada.
 
@@ -57,3 +57,5 @@ Noindex mantido. Não foi configurada publicação em domínio público.
 Teste automatizado em Chromium a 360, 390, 768 e 1440 px: 15 páginas (sete principais e oito categorias), sem rolagem horizontal, fotos decodificadas, vitrine manual, navegação e menu, biografia, modal com teclado e foco, formulário contextual, mensagem codificada, clipboard, e-mail e dúvidas. Testados abertura/reentrada das animações, movimento reduzido, rotas antigas, seleção dos dois banhos, seis etapas do processo e ausência de comprovantes PDF na área pública. Capturas em .playwright/final (não versionadas). O teste verifica os links de contato sem enviar mensagens.
 
 As capturas de desktop e celular foram inspecionadas. Não foram feitos testes em aparelhos físicos nem em outros navegadores.
+
+Revisão pelos oito áudios da Laís: Mario é apresentado por seus mais de 40 anos de experiência, sem atribuir a ele a fundação da empresa; a Primos está no mercado desde 2002. Ferro, metais e zamac recebem destaque conjunto. As licenças aparecem por tipo e órgão, sem datas ou declaração de vigência atual. A imagem amarela anterior ao serviço saiu do catálogo; apenas a foto prateada de molas permanece.

@@ -47,7 +47,7 @@ export function Flagship() {
           <span>
             HASTES DE PANELA
             <br />
-            <strong>Nosso carro-chefe.</strong>
+            <strong>Especialistas em hastes.</strong>
           </span>
         </div>
         <div className="f-reveal">
@@ -58,12 +58,12 @@ export function Flagship() {
             <em>a nossa assinatura.</em>
           </h2>
           <p className="f-lead">
-            O carro-chefe da Primos merece um lugar especial.
+            Especialistas no acabamento de hastes de panela.
           </p>
           <p>
             As hastes de panela fazem parte do dia a dia do nosso trabalho. Do
             conjunto ao detalhe, o acabamento da superfície recebe a atenção de
-            quem tem experiência no ramo desde 1983.
+            Mario Reis, que atua no ramo desde 1983.
           </p>
           <div className="f-inline-facts">
             <span>Unidades e lotes</span>
@@ -199,7 +199,7 @@ export function ProductDetail({
             {group.name}.<br />
             <em>
               {group.slug === "hastes"
-                ? "Nosso carro-chefe."
+                ? "Especialistas no acabamento."
                 : group.caption + "."}
             </em>
           </>
@@ -495,14 +495,14 @@ export function FounderPage() {
               <span>/</span>
               <span aria-current="page">Mario Reis</span>
             </nav>
-            <Eyebrow>FUNDADOR DA CROMEAÇÃO PRIMOS</Eyebrow>
+            <Eyebrow>À FRENTE DA CROMEAÇÃO PRIMOS</Eyebrow>
             <h1>
               Mario Reis.
               <br />
               <em>
                 Uma vida
                 <br />
-                em metal.
+                no acabamento.
               </em>
             </h1>
             <p>
@@ -517,7 +517,7 @@ export function FounderPage() {
           <figure>
             <img
               src={mediaUrl(business.portrait)}
-              alt="Retrato de Mario Reis, fundador da Cromeação Primos, com óculos e camisa azul."
+              alt="Retrato de Mario Reis, à frente da Cromeação Primos, com óculos e camisa azul."
               width="1200"
               height="1600"
               fetchPriority="high"
@@ -547,9 +547,8 @@ export function FounderPage() {
               direto com as peças e os procedimentos.
             </p>
             <p>
-              Em 2002, iniciou o próprio negócio. Hoje, Mario
-              segue à frente da Primos, dando
-              continuidade ao trabalho que acompanha há mais de quatro décadas.
+              Hoje, Mario segue à frente da Primos, dando continuidade ao
+              trabalho que acompanha há mais de quatro décadas.
             </p>
             <p>
               Pai de Laís e Bernardo, sua história pessoal se encontra com a
@@ -618,7 +617,7 @@ export function CompanyPage() {
         label="A Cromeação Primos"
         title={
           <>
-            Desde 2002,
+            No mercado desde 2002,
             <br />
             <em>cuidando de cada superfície.</em>
           </>
@@ -640,13 +639,13 @@ export function CompanyPage() {
             <em>Acabamento no trabalho.</em>
           </h2>
           <p>
-            A Primos começou em 2002, quando Mario Reis iniciou o próprio
-            negócio. Hoje, ele conduz a empresa e dá
-            continuidade à sua trajetória na cromeação, iniciada em 1983.
+            A Primos está no mercado desde 2002. Mario Reis conduz a empresa e
+            dá continuidade à sua trajetória na cromeação, iniciada em 1983.
           </p>
           <p>
-            As hastes de panela são o carro-chefe. O trabalho também aparece em
-            pesos de panela, dobradiças, torneiras, canoplas e outras peças.
+            Somos especialistas no acabamento de hastes de panela. O trabalho
+            também aparece em pesos de panela, dobradiças, torneiras, canoplas e
+            outras peças.
           </p>
           <Action to="mario-reis" secondary>
             Conheça Mario Reis
