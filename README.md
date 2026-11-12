@@ -21,7 +21,7 @@ Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execu
 - Banhos e acabamentos: cromação e niquelação, além de consulta sobre os outros banhos.
 - Processo: consulta e cuidados com a peça, sem inventar uma sequência química da empresa.
 - Mario Reis: retrato com tratamento de fundo, biografia, linha do tempo e fotos reais de trabalho.
-- Empresa: atuação e licenças informadas pelo cliente.
+- Empresa: atuação e cinco documentos de registro, funcionamento, vistoria e segurança, de quatro órgãos, conferidos nas cópias enviadas pelo cliente.
 - Contato: WhatsApp, e-mail, Instagram e preparação de orçamento com nome da peça e banho vindos da navegação.
 
 Rotas estáticas por hash. A entrada padrão é Início. Links antigos de serviços e trabalhos redirecionam para as novas páginas. O formulário prepara o resumo; o visitante revisa e escolhe continuar no WhatsApp ou copiar. Fotos são anexadas na conversa. O material e a quantidade podem ficar desconhecidos.
@@ -42,7 +42,7 @@ Sem bibliotecas de animação: CSS, IntersectionObserver e requestAnimationFrame
 
 [Conteúdo recebido e pendências](docs/CONTEUDO-FINAL.md), [origem das fotos](docs/ORIGEM-FOTOS.json), [referências visuais](docs/REFERENCIAS-VISUAIS.md) e [prompt do tratamento do retrato](docs/PROMPT-RETRATO.md).
 
-**Para fechar a redação técnica:** faltam os nomes de todos os outros banhos e a explicação dos procedimentos específicos da empresa. Os ZIPs continham fotos. Não foram inventados banhos adicionais, prazos, garantias, certificações ou números de licenças. Endereço/horários e documentos das licenças podem ser adicionados quando fornecidos.
+**Para fechar a redação técnica:** faltam os nomes de todos os outros banhos e a explicação dos procedimentos específicos da empresa. Os ZIPs continham fotos. Não foram inventados banhos adicionais, prazos, garantias ou certificações. As licenças já foram incluídas com os períodos dos cinco comprovantes: [conferência e manutenção](docs/LICENCAS.md). Endereço comercial e horários podem ser confirmados caso queiram mostrá-los.
 
 O e-mail informado é cromeacaoprimos@gmail.com. O WhatsApp permanece o canal comercial já confirmado no perfil. As fotografias de peças não tiveram conteúdo alterado; apenas o fundo do retrato de Mario foi tratado com image_gen, com o original preservado e a edição documentada.
 

@@ -901,14 +901,29 @@ h3 {
 }
 .f-license-list strong {
   font-family: "Space Grotesk", sans-serif;
-  font-size: 25px;
+  font-size: 21px;
   font-weight: 500;
+  display: block;
+  line-height: 1.3;
+}
+.f-license-description {
+  min-width: 0;
+}
+.f-license-description > span {
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--f-muted);
 }
 .f-license-list > div > span:last-child {
   margin-left: auto;
   font-size: 8px;
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
   color: #607895;
+  min-width: 110px;
+  text-align: right;
+  line-height: 1.8;
 }
 .f-faq {
   border-top: 1px solid var(--f-line);
@@ -2158,7 +2173,7 @@ details > p {
     font-size: 10px;
   }
   .f-license-list strong {
-    font-size: 23px;
+    font-size: 20px;
   }
   .f-license-list > div {
     gap: 18px;
@@ -2682,13 +2697,29 @@ details > p {
   }
   .f-license-list > div {
     padding: 21px 0;
-    gap: 19px;
+    gap: 14px;
+    align-items: start;
+    flex-wrap: wrap;
   }
   .f-license-list strong {
-    font-size: 24px;
+    font-size: 21px;
+  }
+  .f-license-description {
+    flex: 1;
+    min-width: 220px;
+  }
+  .f-license-description > span {
+    font-size: 10px;
+  }
+  .f-license-list > div > span:first-child {
+    padding-top: 6px;
   }
   .f-license-list > div > span:last-child {
-    font-size: 7px;
+    width: 100%;
+    min-width: 0;
+    padding-left: 29px;
+    text-align: left;
+    font-size: 9px;
   }
   .f-faq h2 {
     margin: 17px 0 22px;

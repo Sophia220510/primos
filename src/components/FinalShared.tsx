@@ -1,5 +1,6 @@
 import type { ReactNode, AnchorHTMLAttributes } from "react";
 import { business, mediaUrl, getPhoto, waLink } from "../final-data";
+import { licenses, documentationIsCurrent } from "../licenses";
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export function RouteLink({
   to,
@@ -115,22 +116,28 @@ export function LicenseBlock() {
       <div>
         <Eyebrow>DOCUMENTAÇÃO & RESPONSABILIDADE</Eyebrow>
         <h2>
-          Um trabalho levado
+          {documentationIsCurrent()
+            ? "Licenças em dia."
+            : "Licenças e autorizações."}
           <br />
-          <em>a sério.</em>
+          <em>Trabalho responsável.</em>
         </h2>
         <p>
-          A Cromeação Primos possui licenças do Exército, da Polícia Civil e da
-          Polícia Federal. Para informações sobre a documentação, converse com a
-          equipe.
+          A Cromeação Primos conta com registro no Exército, licença de
+          funcionamento da Polícia Federal, alvará e vistoria da Polícia Civil e
+          licença do Corpo de Bombeiros. Documentação que acompanha a
+          responsabilidade com as atividades e o local de trabalho.
         </p>
       </div>
       <div className="f-license-list">
-        {["Exército", "Polícia Civil", "Polícia Federal"].map((name, i) => (
-          <div key={name}>
+        {licenses.map((license, i) => (
+          <div key={license.id}>
             <span>0{i + 1}</span>
-            <strong>{name}</strong>
-            <span>Licença</span>
+            <div className="f-license-description">
+              <strong>{license.authority}</strong>
+              <span>{license.document}</span>
+            </div>
+            <span>{license.validityLabel}</span>
           </div>
         ))}
       </div>

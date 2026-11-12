@@ -5,7 +5,7 @@
 - E-mail: cromeacaoprimos@gmail.com (captura da conversa com a empresa).
 - Ferro, metais e zamac; atendimento em unidades e lotes.
 - Hastes de panela como carro-chefe.
-- Licenças do Exército, Polícia Civil e Polícia Federal. A informação foi fornecida pelo cliente; não foram recebidos números, escopos ou validades. A página não cria selos oficiais, números, certificações técnicas nem afirma vigência verificada.
+- Licenças e autorizações do Exército, Polícia Civil, Polícia Federal e Corpo de Bombeiros. Posteriormente foram recebidos cinco comprovantes, lidos e descritos em LICENCAS.md, com períodos apresentados no site. A página não cria selos oficiais ou certificações técnicas do acabamento.
 - Mario Reis é pernambucano, chegou a São Paulo em 1979, começou na cromeação em 1983 e iniciou seu negócio em 2002 com dois sócios. Hoje conduz o negócio sem os sócios iniciais. É pai de Laís e Bernardo.
 
 ## Mídia
@@ -28,7 +28,7 @@ O prompt integral está em PROMPT-RETRATO.md. A edição do fundo não represent
 
 - Lista nominal de todos os outros banhos oferecidos.
 - Explicação dos procedimentos específicos da Primos, materiais indicados, condições e restrições de cada banho.
-- Se desejarem publicar a documentação: números, escopos e validades das licenças e arquivos autorizados.
+- A documentação de licenças já foi recebida e incluída. Manter os dados atualizados nas próximas renovações; consultar LICENCAS.md.
 - Endereço e horários atuais, caso queiram mostrá-los.
 
 Os ZIPs contêm fotografias, não explicações técnicas. Cromação e niquelação continuam como serviços nomeados; outros banhos são tratados como consulta. A página de processo explica a avaliação comercial e descreve apenas cuidados já registrados, sem inventar uma sequência química completa.
