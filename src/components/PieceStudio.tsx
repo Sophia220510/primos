@@ -68,7 +68,7 @@ export default function PieceStudio({
           reais; formatos e medidas variam conforme o pedido.
         </small>
         <RouteLink to={`contato?peca=${slug}`} className="f-text-link">
-          Consultar minha peça <Arrow />
+          Pedir orçamento desta peça <Arrow />
         </RouteLink>
       </div>
       <div className="p-stage">

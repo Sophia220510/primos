@@ -317,7 +317,7 @@ export function BathsPage() {
             <p>{b.text}</p>
             <p>{b.detail}</p>
             <Action to={`contato?banho=${b.id}`}>
-              Consultar {b.name.toLowerCase()}
+              Pedir orçamento de {b.name.toLowerCase()}
             </Action>
           </div>
         </section>
@@ -399,7 +399,7 @@ export function BathsPage() {
               a definir a viabilidade do banho. Consulte a equipe sobre o seu
               material específico.
             </p>
-            <Action secondary>Consultar meu material</Action>
+            <Action secondary>Avaliar minha peça com a Primos</Action>
           </div>
         </div>
       </section>
@@ -447,7 +447,7 @@ export function ProcessPage() {
             os banhos fazem parte do caminho até o acabamento. É um trabalho de
             etapas: cada uma contribui para o resultado da seguinte.
           </p>
-          <Action to="contato">Converse sobre o seu projeto</Action>
+          <Action to="contato">Pedir orçamento para minhas peças</Action>
         </div>
       </section>
       <section className="f-process-steps f-container">
@@ -796,7 +796,7 @@ export function ContactPage() {
             placeholder="Aplicação, estado da peça e o que você procura."
           />
           <button className="f-button" type="submit">
-            Preparar mensagem <Arrow />
+            Preparar meu orçamento <Arrow />
           </button>
           <p className="f-form-footnote">
             Você confere e envia no WhatsApp. O formulário não envia o pedido

@@ -16,7 +16,7 @@ export function RouteLink({
 }
 export function Action({
   to = "contato",
-  children = "Solicitar orçamento",
+  children = "Quero meu orçamento",
   secondary = false,
 }: {
   to?: string;
@@ -101,13 +101,17 @@ export function FinalCta() {
         <div>
           <Eyebrow>UNIDADES OU LOTES</Eyebrow>
           <h2>
-            O próximo acabamento
+            Sua peça merece
             <br />
-            pode ser o da <em>sua peça.</em>
+            <em>um novo acabamento.</em>
           </h2>
-          <p>Envie uma foto. Conte o que você precisa. Vamos conversar.</p>
+          <p>Envie fotos da sua peça e a quantidade desejada. Fale direto com a Primos para avaliar o serviço e pedir seu orçamento.</p>
         </div>
-        <Action />
+        <div className="r-cta-actions">
+          <a className="f-button" href={waLink()} target="_blank" rel="noopener noreferrer">Enviar fotos no WhatsApp <Arrow /></a>
+          <RouteLink to="contato" className="f-text-link">Preencher meu pedido <Arrow /></RouteLink>
+          <span>Uma unidade ou um lote: comece pela sua peça.</span>
+        </div>
       </div>
     </section>
   );

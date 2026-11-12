@@ -286,7 +286,7 @@ export default function App() {
             className="f-nav-quote"
             onClick={() => setMenu(false)}
           >
-            Orçamento <Arrow />
+            Pedir orçamento <Arrow />
           </RouteLink>
         </nav>
       </header>
@@ -321,7 +321,7 @@ export default function App() {
               ao cuidado com a sua peça.
             </p>
             <RouteLink to="contato" className="f-button">
-              Vamos conversar <Arrow />
+              Quero meu orçamento <Arrow />
             </RouteLink>
           </div>
           <div className="f-footer-columns">

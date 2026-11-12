@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { productGroups } from "../final-data";
+import { productGroups, waLink } from "../final-data";
 import { Action, Arrow, Eyebrow, ProductImage, RouteLink } from "./FinalShared";
 
 const slides = [
@@ -51,7 +51,10 @@ export function Showcase() {
             Cromação e niquelação para peças em ferro, metais e zamac.
             Experiência de quem conhece cada etapa do trabalho.
           </p>
-          <Action>Vamos falar da sua peça</Action>
+          <div className="r-cta-actions">
+            <Action>Quero orçar minha peça</Action>
+            <a href={waLink()} target="_blank" rel="noopener noreferrer" className="f-text-link">Enviar fotos no WhatsApp <Arrow /></a>
+          </div>
         </div>
         <div className="r-hero-facts">
           <span>
@@ -320,7 +323,7 @@ export function Journey() {
           </article>
         ))}
       </div>
-      <Action>Consultar meu pedido</Action>
+      <Action>Quero começar meu orçamento</Action>
     </section>
   );
 }

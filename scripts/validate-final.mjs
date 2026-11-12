@@ -188,7 +188,7 @@ for (const width of [360, 390, 768, 1440]) {
   await page.locator("#dimensions").fill("20 cm");
   await page.locator("#details").fill("Avaliação de acabamento");
   await page
-    .getByRole("button", { name: "Preparar mensagem", exact: true })
+    .getByRole("button", { name: "Preparar meu orçamento", exact: true })
     .click();
   const href = await page
     .getByRole("link", { name: "Continuar no WhatsApp", exact: true })
@@ -224,7 +224,7 @@ for (const width of [360, 390, 768, 1440]) {
   await page.locator("#name").fill("Consulta sem quantidade");
   await page.locator("#piece").fill("Minha peça");
   await page
-    .getByRole("button", { name: "Preparar mensagem", exact: true })
+    .getByRole("button", { name: "Preparar meu orçamento", exact: true })
     .click();
   await expect(page.locator("#summary")).toContainText("");
   assert(
@@ -244,7 +244,7 @@ for (const width of [360, 390, 768, 1440]) {
   await expect(page.locator(".f-bath-feature")).toHaveCount(2);
   await expect(page.getByRole("table")).toBeVisible();
   await page
-    .getByRole("link", { name: "Consultar niquelação", exact: true })
+    .getByRole("link", { name: "Pedir orçamento de niquelação", exact: true })
     .click();
   await page.waitForURL("**/#/contato?banho=niquelacao");
   await expect(page.locator("#bath")).toHaveValue("Niquelação");
