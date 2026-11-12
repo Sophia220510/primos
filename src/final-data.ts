@@ -93,12 +93,12 @@ export const timeline = [
   {
     year: "2002",
     title: "O próprio negócio",
-    text: "Ao lado de dois sócios, Mario inicia o seu negócio de cromeação. Nasce a história da Primos.",
+    text: "Mario inicia o seu negócio de cromeação. Nasce a história da Primos.",
   },
   {
     year: "Hoje",
     title: "Mario à frente da Primos",
-    text: "Atualmente, Mario conduz o negócio sem os sócios iniciais e segue trabalhando no ramo que faz parte da sua trajetória.",
+    text: "Atualmente, Mario conduz o negócio e segue trabalhando no ramo que faz parte da sua trajetória.",
   },
 ];
 export const faqs = [

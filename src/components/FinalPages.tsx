@@ -547,8 +547,8 @@ export function FounderPage() {
               direto com as peças e os procedimentos.
             </p>
             <p>
-              Em 2002, iniciou o próprio negócio com dois sócios. Hoje, Mario
-              segue à frente da Primos sem os sócios iniciais, dando
+              Em 2002, iniciou o próprio negócio. Hoje, Mario
+              segue à frente da Primos, dando
               continuidade ao trabalho que acompanha há mais de quatro décadas.
             </p>
             <p>
@@ -641,7 +641,7 @@ export function CompanyPage() {
           </h2>
           <p>
             A Primos começou em 2002, quando Mario Reis iniciou o próprio
-            negócio ao lado de dois sócios. Hoje, ele conduz a empresa e dá
+            negócio. Hoje, ele conduz a empresa e dá
             continuidade à sua trajetória na cromeação, iniciada em 1983.
           </p>
           <p>
