@@ -1,7 +1,14 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
 import PieceStudio from "./PieceStudio";
-import { Showcase, Introduction, Collection, Journey } from "./Redesign";
+import {
+  Showcase,
+  Introduction,
+  Collection,
+  Journey,
+  MovingBand,
+  FinishExplorer,
+} from "./Redesign";
 import {
   business,
   productGroups,
@@ -140,10 +147,11 @@ export function Home() {
   return (
     <>
       <Showcase />
+      <MovingBand />
       <Introduction />
       <Collection featured />
       <Flagship />
-      <BathPreview />
+      <FinishExplorer />
       <Journey />
       <FounderPreview />
       <LicenseBlock />

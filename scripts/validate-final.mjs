@@ -86,6 +86,32 @@ for (const width of [360, 390, 768, 1440]) {
     page.locator('nav[aria-label="Navegação principal"] a[aria-current]'),
   ).toHaveText("Início");
   await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
+  await expect(page.locator(".r-catalog-item")).toHaveCount(8);
+  await page
+    .getByRole("button", { name: "Mostrar foto de Canoplas", exact: true })
+    .click();
+  await expect(page.locator(".f-slide-caption h2")).toHaveText("Canoplas");
+  await page
+    .getByRole("button", {
+      name: "Mostrar foto de Hastes de panela",
+      exact: true,
+    })
+    .click();
+  await page
+    .getByRole("button", { name: "Pausar faixa animada", exact: true })
+    .click();
+  await expect(page.locator(".r-moving-band")).toHaveClass(/is-paused/);
+  await page
+    .getByRole("button", { name: "Retomar faixa animada", exact: true })
+    .click();
+  await page.getByRole("button", { name: "Niquelação", exact: true }).click();
+  await expect(page.locator(".r-finish-element strong")).toHaveText("Ni");
+  await expect(page.locator(".r-finish-copy .f-button")).toHaveAttribute(
+    "href",
+    "#/banhos?tipo=niquelacao",
+  );
+  await page.getByRole("button", { name: "Cromação", exact: true }).click();
+  await expect(page.locator(".r-finish-element strong")).toHaveText("Cr");
   await page
     .getByRole("button", { name: "Próximo destaque", exact: true })
     .click();

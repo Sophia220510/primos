@@ -15,7 +15,7 @@ Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execu
 
 ## Páginas e jornada
 
-- Início: abertura fotográfica ampla com três destaques manuais, apresentação da empresa, seleção editorial de peças, carro-chefe, banhos, jornada do pedido, Mario, licenças e dúvidas.
+- Início: abertura fotográfica com três prévias clicáveis, faixa animada com pausa, mosaicos, oito categorias de peças, carro-chefe, explorador dos dois banhos, jornada ilustrada do pedido, Mario, licenças e dúvidas.
 - Peças e aplicações: catálogo filtrável por aplicação, oito categorias com página própria e galeria ampliável. São 24 fotografias reais selecionadas.
 - Hastes de panela: destaque como carro-chefe, com seis registros.
 - Banhos e acabamentos: cromação e niquelação, com comparação dos serviços e orientação para o orçamento.
@@ -39,6 +39,8 @@ Rotas estáticas por hash. A entrada padrão é Início. Links antigos de servi�
 - `public/media/cliente/`: WebPs de fotos, versões menores e retratos.
 
 Sem bibliotecas de animação: CSS, IntersectionObserver e requestAnimationFrame. A barra de leitura não dispara renderizações da aplicação a cada rolagem. Movimento reduzido, teclado, Escape e retorno de foco no modal são respeitados. A vitrine não gira automaticamente.
+
+A apresentação usa tipografia de leitura ampliada, seções compactas, entradas sequenciais, reflexo nas fotos ao passar o cursor e profundidade na abertura por movimento do mouse. A faixa só se movimenta quando visível e pode ser pausada. Movimento reduzido desliga os efeitos adicionais. O 3D continua separado e carregado apenas após interação.
 
 ## Fontes e pendências
 
