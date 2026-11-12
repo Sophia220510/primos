@@ -1,0 +1,336 @@
+/* Primos: photographic industrial editorial system. */
+:root {
+  --f-blue: #175e99;
+  --f-ink: #171e25;
+  --f-line: #ced3d8;
+  background: #f3f3ef;
+}
+.f-showcase {
+  background: #141c24;
+  isolation: isolate;
+}
+.f-showcase-copy {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(115deg, #101921, #25333e);
+}
+.f-showcase-copy::before {
+  content: "SÃO PAULO / BR";
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font: 10px monospace;
+  letter-spacing: 2px;
+  color: #8d9ba7;
+}
+.f-showcase h1 {
+  font-weight: 500;
+  letter-spacing: -0.065em;
+  font-size: clamp(62px, 6.1vw, 104px);
+  line-height: 0.98;
+}
+.f-showcase h1 em {
+  color: #c8d6e3;
+}
+.f-showcase-copy > p:not(.f-eyebrow) {
+  color: #bfcbd5;
+  max-width: 390px;
+  font-size: 14px;
+}
+.f-showcase .f-eyebrow {
+  color: #a9c4db;
+}
+.f-showcase-media > img {
+  filter: saturate(0.65);
+}
+.f-showcase .f-hero-proof {
+  border-color: #52606c;
+}
+.f-showcase .f-hero-proof > span {
+  color: #e0e6ec;
+}
+.f-showcase .f-hero-proof strong {
+  color: #a9b9c7;
+}
+.f-showcase .f-button {
+  background: #e1e7ec;
+  color: #172633;
+  border-color: #e1e7ec;
+}
+.f-showcase .f-button-secondary {
+  background: transparent;
+  color: #e1e7ec;
+  border-color: #617281;
+}
+.f-showcase .f-hero-actions a:nth-child(2) {
+  background: transparent;
+  color: #e1e7ec;
+  border-color: #617281;
+}
+.f-trust-strip {
+  background: #e5e7e7;
+  border-bottom: 1px solid #cbd0d5;
+}
+.f-products {
+  padding-top: 110px;
+}
+.f-section-head h2,
+.f-faq h2 {
+  letter-spacing: -0.055em;
+}
+.f-product-card > div {
+  border-radius: 0;
+}
+.f-product-card img {
+  filter: saturate(0.7);
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.65, 0.2, 1),
+    filter 0.7s;
+}
+.f-product-card:hover img {
+  filter: saturate(1);
+}
+.f-category-index {
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+.f-product-card h3 {
+  letter-spacing: -0.04em;
+}
+.f-page-intro {
+  background: #e9ecec;
+}
+.p-overline {
+  font: 10px monospace;
+  letter-spacing: 2px;
+  color: #72879a;
+}
+.p-studio {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  margin-block: 20px 85px;
+  min-height: 510px;
+  background: #101c27;
+  color: #ecf0f3;
+}
+.p-studio-copy {
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.p-studio h2 {
+  font-size: clamp(34px, 3.2vw, 51px);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+  margin: 26px 0;
+}
+.p-studio h2 em {
+  color: #a6bdd0;
+}
+.p-studio p {
+  color: #c1cbd4;
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 270px;
+}
+.p-studio small {
+  display: block;
+  max-width: 300px;
+  color: #98a9b8;
+  font-size: 11px;
+  line-height: 1.8;
+  margin: 24px 0 30px;
+}
+.p-studio .f-text-link {
+  color: #e3edf6;
+}
+.p-stage {
+  min-width: 0;
+  position: relative;
+  min-height: 510px;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 50% 45%,
+    #3c5061 0%,
+    #1a2936 50%,
+    #101c27 85%
+  );
+}
+.p-stage::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 65px 35px 90px;
+  border: 1px solid #9bbbd220;
+  border-radius: 50%;
+  transform: rotate(-24deg);
+}
+.p-stage-label {
+  position: absolute;
+  top: 26px;
+  left: 28px;
+  z-index: 2;
+  color: #a9bbca;
+  font: 9px monospace;
+  letter-spacing: 1.8px;
+}
+.p-canvas {
+  position: absolute;
+  inset: 0;
+}
+.p-canvas canvas {
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  cursor: grab;
+}
+.p-canvas canvas:active {
+  cursor: grabbing;
+}
+.p-studio-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+.p-studio-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.55) saturate(0.45);
+}
+.p-studio-poster button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  max-width: 85%;
+  padding: 18px 24px;
+  border: 1px solid #bfceda;
+  background: #14222be8;
+  color: white;
+  font-size: 13px;
+}
+.p-studio-controls {
+  position: absolute;
+  bottom: 25px;
+  left: 24px;
+  right: 24px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.p-studio-controls > span {
+  font: 8px monospace;
+  letter-spacing: 1px;
+  color: #b1c2d0;
+}
+.p-studio-controls > div {
+  display: flex;
+  gap: 5px;
+}
+.p-studio-controls button {
+  border: 1px solid #7792a54d;
+  background: #152530;
+  color: #e4edf4;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 8px 12px;
+  font-size: 11px;
+}
+.p-studio-controls button:hover {
+  background: #314b60;
+}
+@media (min-width: 1000px) {
+  .f-showcase {
+    grid-template-columns: 48% 52%;
+  }
+  .f-showcase-copy {
+    padding-top: 85px;
+    padding-bottom: 65px;
+  }
+  .f-showcase-media {
+    min-height: 660px;
+  }
+  .f-slide-caption h2 {
+    font-size: 55px;
+    letter-spacing: -0.05em;
+  }
+  .f-featured-grid {
+    column-gap: 35px;
+    row-gap: 55px;
+  }
+}
+@media (max-width: 900px) {
+  .p-studio {
+    grid-template-columns: 1fr;
+  }
+  .p-studio-copy {
+    padding: 35px;
+  }
+  .p-studio h2 {
+    font-size: 42px;
+  }
+  .p-studio small {
+    max-width: 450px;
+  }
+  .p-stage {
+    min-height: 420px;
+  }
+  .f-showcase h1 {
+    font-size: clamp(53px, 8vw, 76px);
+  }
+}
+@media (max-width: 600px) {
+  .f-showcase-copy {
+    padding-top: 52px;
+    padding-bottom: 32px;
+  }
+  .f-showcase-copy::before {
+    top: 18px;
+    right: 6%;
+    font-size: 8px;
+  }
+  .f-showcase h1 {
+    font-size: clamp(48px, 12.5vw, 70px);
+    letter-spacing: -0.06em;
+  }
+  .f-showcase-copy > p:not(.f-eyebrow) {
+    font-size: 13px;
+  }
+  .f-products {
+    padding-top: 60px;
+  }
+  .p-studio {
+    width: 100%;
+    margin-block: 0 45px;
+  }
+  .p-studio-copy {
+    padding: 35px 6% 12px;
+  }
+  .p-studio h2 {
+    margin: 20px 0;
+    font-size: 40px;
+  }
+  .p-stage {
+    min-height: 380px;
+  }
+  .p-studio-controls {
+    flex-direction: column;
+    bottom: 18px;
+  }
+  .p-stage-label {
+    top: 22px;
+    left: 6%;
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .f-product-card img {
+    transition: none;
+  }
+}

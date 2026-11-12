@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { FormEvent } from "react";
+import PieceStudio from "./PieceStudio";
 import {
   business,
   productGroups,
@@ -57,9 +58,9 @@ export function Showcase() {
       <div className="f-showcase-copy">
         <Eyebrow>CROMAÇÃO & NIQUELAÇÃO · DESDE 2002</Eyebrow>
         <h1>
-          O detalhe muda
+          Metal ganha
           <br />
-          <em>toda a peça.</em>
+          <em>outra presença.</em>
         </h1>
         <p>
           Cromação e niquelação em ferro, metais e zamac. Da unidade ao lote, um
@@ -171,6 +172,9 @@ export function ProductGrid({ featured = false }: { featured?: boolean }) {
             </div>
             <span className="f-category-index">
               0{i + 1} / {g.caption}
+              {["hastes", "canoplas", "guidoes"].includes(g.slug) && (
+                <span> · EXPLORE EM 3D</span>
+              )}
             </span>
             <h3>{g.name}</h3>
           </RouteLink>
@@ -354,6 +358,9 @@ export function ProductDetail({
         }
         text={group.description}
       />
+      {["hastes", "canoplas", "guidoes"].includes(slug) && (
+        <PieceStudio key={slug} slug={slug} cover={group.cover} />
+      )}
       <section className="f-product-detail f-container">
         <div className="f-product-detail-gallery">
           {photos.map((p, i) => (
