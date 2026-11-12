@@ -2,7 +2,8 @@
 
 O material principal da versão de 12/11/2026 foi fornecido pelo cliente: nove ZIPs, uma JPEG avulsa e capturas com legendas, biografia de Mario Reis, e-mail e informações comerciais.
 
-- [Conteúdo recebido, limites e pendências](docs/CONTEUDO-FINAL.md)
+- [Conteúdo recebido e escopo final](docs/CONTEUDO-FINAL.md)
+- [Base técnica da explicação de processo](docs/PROCESSO-EDITORIAL.md)
 - [Inventário de origem das fotografias selecionadas](docs/ORIGEM-FOTOS.json)
 - [Sites de referência consultados](docs/REFERENCIAS-VISUAIS.md)
 - [Edição do fundo do retrato: prompt e ferramenta](docs/PROMPT-RETRATO.md)

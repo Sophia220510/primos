@@ -24,13 +24,13 @@ Saída: public/media/cliente/mario-retrato.webp. Editado com a ferramenta integr
 
 O prompt integral está em PROMPT-RETRATO.md. A edição do fundo não representa uma instalação real ou um novo ambiente da empresa.
 
-## O que ainda falta para fechar a redação técnica
+## Escopo final aprovado para conclusão
 
-- Lista nominal de todos os outros banhos oferecidos.
-- Explicação dos procedimentos específicos da Primos, materiais indicados, condições e restrições de cada banho.
+- O cliente definiu cromação e niquelação como os dois banhos do site e autorizou a conclusão da explicação do processo.
+- A redação apresenta seis etapas usuais do tratamento de superfície. É uma explicação geral ajustável a cada peça, sem atribuir à empresa uma receita química específica ou equipamentos não documentados. Fontes e critérios em PROCESSO-EDITORIAL.md.
 - A documentação de licenças já foi recebida e incluída. Manter os dados atualizados nas próximas renovações; consultar LICENCAS.md.
-- Endereço e horários atuais, caso queiram mostrá-los.
+- O escopo de entrega foi concluído sem endereço de atendimento ao público e horários não confirmados. Isso não impede o contato pelos canais comerciais já fornecidos.
 
-Os ZIPs contêm fotografias, não explicações técnicas. Cromação e niquelação continuam como serviços nomeados; outros banhos são tratados como consulta. A página de processo explica a avaliação comercial e descreve apenas cuidados já registrados, sem inventar uma sequência química completa.
+O conteúdo final apresenta somente cromação e niquelação, inclusive no formulário. A página de processo explica avaliação, preparação/limpeza, organização para o banho, deposição do revestimento, lavagem/secagem e conferência. Fotografias reais de peças acompanham a explicação; elas não são tratadas como provas de equipamentos ou de uma linha química completa. Os PDFs de comprovantes não são publicados, conforme orientação expressa do cliente.
 
 O noindex foi mantido. A atualização do código no GitHub não equivale a publicação em domínio público.

@@ -5,6 +5,7 @@ import {
   productGroups,
   productPhotos,
   baths,
+  processStages,
   timeline,
   faqs,
   mediaUrl,
@@ -248,7 +249,7 @@ export function BathPreview() {
           </RouteLink>
         ))}
         <RouteLink className="f-bath-consult" to="contato">
-          Outro acabamento? Converse com a equipe <Arrow />
+          Não sabe qual escolher? Peça orientação <Arrow />
         </RouteLink>
       </div>
     </section>
@@ -466,6 +467,63 @@ export function BathsPage() {
           </div>
         </section>
       ))}
+      <section className="f-bath-guide f-container f-reveal">
+        <div className="f-section-head">
+          <div>
+            <Eyebrow>ENTENDA A ESCOLHA</Eyebrow>
+            <h2>
+              Qual banho combina
+              <br />
+              <em>com a sua peça?</em>
+            </h2>
+          </div>
+          <p>
+            O nome do banho é só o começo. Material, estado da superfície e
+            aplicação ajudam a definir o revestimento.
+          </p>
+        </div>
+        <table>
+          <caption className="f-sr-only">
+            Comparação entre cromação e niquelação
+          </caption>
+          <thead>
+            <tr>
+              <th scope="col">O que considerar</th>
+              <th scope="col">Cromação</th>
+              <th scope="col">Niquelação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Revestimento</th>
+              <td>Acabamento da superfície com cromo.</td>
+              <td>Revestimento da superfície com níquel.</td>
+            </tr>
+            <tr>
+              <th scope="row">No acabamento</th>
+              <td>Compõe o acabamento final do sistema de revestimento.</td>
+              <td>
+                Pode compor o acabamento ou servir de base para outros
+                revestimentos.
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Para definir</th>
+              <td colSpan={2}>
+                A equipe avalia o material, o formato, a superfície e o uso da
+                peça.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div className="f-bath-guide-action">
+          <p>
+            Não precisa escolher sozinho. Selecione “Preciso de orientação” no
+            orçamento.
+          </p>
+          <Action>Receber orientação</Action>
+        </div>
+      </section>
       <section className="f-material-band">
         <div className="f-container f-reveal">
           <div>
@@ -507,7 +565,7 @@ export function ProcessPage() {
             <em>existe trabalho.</em>
           </>
         }
-        text="Do conhecimento da peça ao acabamento da superfície, cada consulta começa por entender o material e a aplicação."
+        text="Conheça as etapas usuais do tratamento de superfície: da preparação do metal à conferência do acabamento. A sequência é ajustada ao material, ao formato e à aplicação da peça."
       />
       <section className="f-process-opening f-container f-reveal">
         <img
@@ -530,9 +588,9 @@ export function ProcessPage() {
             o estado e a finalidade da peça.
           </p>
           <p>
-            As fotografias mostram peças e momentos reais do trabalho. Na
-            consulta, a equipe conversa sobre as condições específicas do seu
-            pedido.
+            A preparação da superfície, a montagem das peças e os cuidados entre
+            os banhos fazem parte do caminho até o acabamento. É um trabalho de
+            etapas: cada uma contribui para o resultado da seguinte.
           </p>
           <Action to="contato">Converse sobre o seu projeto</Action>
         </div>
@@ -540,40 +598,31 @@ export function ProcessPage() {
       <section className="f-process-steps f-container">
         <div className="f-section-head f-reveal">
           <div>
-            <Eyebrow>COMO COMEÇAMOS</Eyebrow>
+            <Eyebrow>DO METAL AO ACABAMENTO</Eyebrow>
             <h2>
-              Da sua necessidade
+              O cuidado acontece
               <br />
-              <em>à avaliação da peça.</em>
+              <em>em cada etapa.</em>
             </h2>
           </div>
         </div>
-        {[
-          {
-            title: "Entender o pedido",
-            text: "Fotos, material, dimensões e quantidade ajudam a conhecer a peça. O atendimento pode ser para unidades ou lotes.",
-            image: "hastes-6",
-          },
-          {
-            title: "Definir o acabamento",
-            text: "A equipe avalia o material e a aplicação para orientar a consulta sobre o tratamento de superfície e o banho.",
-            image: "canoplas-1",
-          },
-          {
-            title: "Cuidar dos detalhes",
-            text: "A limpeza e a inspeção das peças fazem parte dos registros de trabalho da Primos. As etapas do tratamento são definidas conforme cada caso.",
-            image: "hastes-5",
-          },
-        ].map((s, i) => (
-          <article key={s.title} className="f-reveal">
-            <span>0{i + 1}</span>
-            <div>
-              <h3>{s.title}</h3>
-              <p>{s.text}</p>
-            </div>
-            <ProductImage id={s.image} />
-          </article>
-        ))}
+        <ol
+          className="f-process-list"
+          aria-label="Etapas usuais do tratamento de superfície"
+        >
+          {processStages.map((s, i) => (
+            <li key={s.title}>
+              <article key={s.title} className="f-reveal">
+                <span>0{i + 1}</span>
+                <div>
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </div>
+                <ProductImage id={s.image} />
+              </article>
+            </li>
+          ))}
+        </ol>
       </section>
       <BathPreview />
       <FinalCta />
@@ -878,7 +927,6 @@ export function ContactPage() {
             {baths.map((b) => (
               <option key={b.id}>{b.name}</option>
             ))}
-            <option>Outro banho (consultar)</option>
           </select>
           <label htmlFor="details">
             Conte um pouco mais <small>(opcional)</small>

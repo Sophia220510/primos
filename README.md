@@ -1,4 +1,4 @@
-# Cromeação Primos — versão de apresentação final
+# Cromeação Primos — site institucional
 
 React, TypeScript e Vite. Identidade prata, grafite e azul, vitrine de peças na abertura, fotografias fornecidas pela empresa e página dedicada a Mario Reis. Não há backend ou envio automático de mensagens.
 
@@ -18,8 +18,8 @@ Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execu
 - Início: vitrine manual de três destaques, peças, carro-chefe, banhos, Mario, licenças, dúvidas e orçamento.
 - Peças e aplicações: oito categorias, cada uma com sua página e galeria ampliável. São 24 fotografias reais selecionadas.
 - Hastes de panela: destaque como carro-chefe, com seis registros.
-- Banhos e acabamentos: cromação e niquelação, além de consulta sobre os outros banhos.
-- Processo: consulta e cuidados com a peça, sem inventar uma sequência química da empresa.
+- Banhos e acabamentos: cromação e niquelação, com comparação dos serviços e orientação para o orçamento.
+- Processo: seis etapas usuais, da avaliação da peça à conferência do acabamento, em linguagem acessível.
 - Mario Reis: retrato com tratamento de fundo, biografia, linha do tempo e fotos reais de trabalho.
 - Empresa: atuação e cinco documentos de registro, funcionamento, vistoria e segurança, de quatro órgãos, conferidos nas cópias enviadas pelo cliente.
 - Contato: WhatsApp, e-mail, Instagram e preparação de orçamento com nome da peça e banho vindos da navegação.
@@ -42,7 +42,7 @@ Sem bibliotecas de animação: CSS, IntersectionObserver e requestAnimationFrame
 
 [Conteúdo recebido e pendências](docs/CONTEUDO-FINAL.md), [origem das fotos](docs/ORIGEM-FOTOS.json), [referências visuais](docs/REFERENCIAS-VISUAIS.md) e [prompt do tratamento do retrato](docs/PROMPT-RETRATO.md).
 
-**Para fechar a redação técnica:** faltam os nomes de todos os outros banhos e a explicação dos procedimentos específicos da empresa. Os ZIPs continham fotos. Não foram inventados banhos adicionais, prazos, garantias ou certificações. As licenças já foram incluídas com os períodos dos cinco comprovantes: [conferência e manutenção](docs/LICENCAS.md). Endereço comercial e horários podem ser confirmados caso queiram mostrá-los.
+**Escopo final definido pelo cliente:** cromação e niquelação são os dois banhos apresentados. O processo foi concluído como uma explicação das etapas usuais do tratamento, ajustadas conforme material e aplicação: [base editorial e técnica](docs/PROCESSO-EDITORIAL.md). Não foram inventados banhos adicionais, prazos, garantias ou certificações. As licenças estão apresentadas pelos tipos e períodos dos cinco comprovantes: [conferência e manutenção](docs/LICENCAS.md). Os PDFs integrais não ficam públicos nem têm links de download.
 
 O e-mail informado é cromeacaoprimos@gmail.com. O WhatsApp permanece o canal comercial já confirmado no perfil. As fotografias de peças não tiveram conteúdo alterado; apenas o fundo do retrato de Mario foi tratado com image_gen, com o original preservado e a edição documentada.
 
@@ -50,6 +50,6 @@ Noindex mantido. Não foi configurada publicação em domínio público.
 
 ## Verificação
 
-Teste automatizado em Chromium a 360, 390, 768 e 1440 px: 15 páginas (sete principais e oito categorias), sem rolagem horizontal, fotos decodificadas, vitrine manual, navegação e menu, biografia, modal com teclado e foco, formulário contextual, mensagem codificada, clipboard, e-mail e dúvidas. Testados abertura/reentrada das animações, movimento reduzido e rotas antigas. Capturas em .playwright/final (não versionadas). O teste verifica os links de contato sem enviar mensagens.
+Teste automatizado em Chromium a 360, 390, 768 e 1440 px: 15 páginas (sete principais e oito categorias), sem rolagem horizontal, fotos decodificadas, vitrine manual, navegação e menu, biografia, modal com teclado e foco, formulário contextual, mensagem codificada, clipboard, e-mail e dúvidas. Testados abertura/reentrada das animações, movimento reduzido, rotas antigas, seleção dos dois banhos, seis etapas do processo e ausência de comprovantes PDF na área pública. Capturas em .playwright/final (não versionadas). O teste verifica os links de contato sem enviar mensagens.
 
 As capturas de desktop e celular foram inspecionadas. Não foram feitos testes em aparelhos físicos nem em outros navegadores.

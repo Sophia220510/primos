@@ -425,8 +425,22 @@ export default function App() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Conversar com a Primos no WhatsApp"
+        title="WhatsApp — Fale com a Primos"
       >
-        <span aria-hidden="true">↗</span>Fale com a Primos
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          width="25"
+          height="25"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M21 11.5a9 9 0 0 1-13.3 7.9L3 21l1.6-4.7A9 9 0 1 1 21 11.5Z" />
+          <path d="m8 7 2-.5 1 3-1.2 1a8 8 0 0 0 3.7 3.7l1-1.2 3 1-.5 2c-.2.6-.8.9-1.4.8-4.7-.8-8.6-4.7-9.4-9.4C6.1 7.8 6.7 7.2 8 7Z" />
+        </svg>
       </a>
       <dialog
         ref={dialog}

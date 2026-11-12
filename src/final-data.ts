@@ -47,6 +47,38 @@ export const baths = [
       "A indicação da niquelação depende da peça e da aplicação. Converse com a Primos sobre o seu material e o resultado que procura.",
   },
 ];
+export const processStages = [
+  {
+    title: "Avaliação da peça",
+    text: "Material, formato, estado da superfície e aplicação orientam a escolha do acabamento. Quantidade e medidas ajudam a definir o atendimento, da unidade ao lote.",
+    image: "hastes-6",
+  },
+  {
+    title: "Preparação e limpeza",
+    text: "A preparação remove óleos, gorduras e resíduos que podem prejudicar a aderência. Os cuidados com a superfície são escolhidos conforme o metal e as condições da peça.",
+    image: "hastes-5",
+  },
+  {
+    title: "Organização para o banho",
+    text: "As peças são posicionadas conforme sua geometria e o tratamento. Nos processos com gancheiras, a montagem permite o contato elétrico e a exposição da superfície ao banho.",
+    image: "dobradicas-1",
+  },
+  {
+    title: "Aplicação do revestimento",
+    text: "Em um banho eletrolítico, a corrente elétrica favorece a deposição de metal sobre a superfície. O sistema de revestimento é definido conforme a cromação ou a niquelação e a aplicação da peça.",
+    image: "canoplas-1",
+  },
+  {
+    title: "Lavagem e secagem",
+    text: "Os enxágues entre as etapas ajudam a remover resíduos das soluções anteriores. Ao final do tratamento, a secagem prepara a peça para a conferência do acabamento.",
+    image: "torneiras-1",
+  },
+  {
+    title: "Conferência e organização",
+    text: "A superfície é observada e as peças são organizadas conforme o pedido. É o momento de olhar o conjunto e os detalhes do acabamento antes da entrega.",
+    image: "pesos-1",
+  },
+];
 export const timeline = [
   {
     year: "1979",

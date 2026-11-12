@@ -3,6 +3,20 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 fs.mkdirSync(".playwright/final", { recursive: true });
 const media = JSON.parse(fs.readFileSync("src/client-media.json", "utf8"));
+function filesIn(dir) {
+  return fs
+    .readdirSync(dir, { withFileTypes: true })
+    .flatMap((entry) =>
+      entry.isDirectory()
+        ? filesIn(`${dir}/${entry.name}`)
+        : [`${dir}/${entry.name}`],
+    );
+}
+assert.equal(
+  filesIn("public").some((file) => /\.pdf$/i.test(file)),
+  false,
+  "Os comprovantes não devem ser publicados.",
+);
 const routes = [
   "inicio",
   "pecas",
@@ -52,6 +66,7 @@ for (const width of [360, 390, 768, 1440]) {
   await expect(
     page.locator('nav[aria-label="Navegação principal"] a[aria-current]'),
   ).toHaveText("Início");
+  await expect(page.locator('a[href$=".pdf"]')).toHaveCount(0);
   await page
     .getByRole("button", { name: "Próximo destaque", exact: true })
     .click();
@@ -156,6 +171,11 @@ for (const width of [360, 390, 768, 1440]) {
       .evaluate((e) => e.open),
   );
   await page.goto("http://127.0.0.1:5175/#/contato");
+  assert.deepEqual(await page.locator("#bath option").allTextContents(), [
+    "Preciso de orientação",
+    "Cromação",
+    "Niquelação",
+  ]);
   await page.locator("#name").fill("Consulta sem quantidade");
   await page.locator("#piece").fill("Minha peça");
   await page
@@ -167,7 +187,30 @@ for (const width of [360, 390, 768, 1440]) {
       "Quantidade: A informar",
     ),
   );
-  for (const route of ["inicio", "mario-reis", "pecas", "contato"]) {
+  await page.goto("http://127.0.0.1:5175/#/processo");
+  await expect(page.locator(".f-process-list>li")).toHaveCount(6);
+  await expect(page.locator(".f-process-steps")).toContainText(
+    "Preparação e limpeza",
+  );
+  await expect(page.locator(".f-process-steps")).toContainText(
+    "Lavagem e secagem",
+  );
+  await page.goto("http://127.0.0.1:5175/#/banhos");
+  await expect(page.locator(".f-bath-feature")).toHaveCount(2);
+  await expect(page.getByRole("table")).toBeVisible();
+  await page
+    .getByRole("link", { name: "Consultar niquelação", exact: true })
+    .click();
+  await page.waitForURL("**/#/contato?banho=niquelacao");
+  await expect(page.locator("#bath")).toHaveValue("Niquelação");
+  for (const route of [
+    "inicio",
+    "mario-reis",
+    "pecas",
+    "contato",
+    "banhos",
+    "processo",
+  ]) {
     await page.goto(`http://127.0.0.1:5175/#/${route}`);
     await page.evaluate(() => document.fonts.ready);
     for (const img of await page.locator("main img").all()) {
