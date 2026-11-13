@@ -1,3 +1,5 @@
+import { browserRoute, routeHref } from "./routing";
+import { updateSeo } from "./seo";
 import { observeRevealMotion } from "./reveal-motion";
 import { useEffect, useRef, useState } from "react";
 import type { KeyboardEvent } from "react";
@@ -22,26 +24,6 @@ import {
 import { Arrow, RouteLink } from "./components/FinalShared";
 import "./final.css";
 
-const aliases: Record<string, string> = {
-  servicos: "banhos",
-  trabalhos: "pecas",
-  cromacao: "banhos?tipo=cromacao",
-  niquelacao: "banhos?tipo=niquelacao",
-};
-const known = [
-  "inicio",
-  "pecas",
-  "banhos",
-  "processo",
-  "mario-reis",
-  "empresa",
-  "contato",
-];
-function resolve() {
-  const raw = location.hash.replace(/^#\/?/, "");
-  const key = aliases[raw] || raw || "inicio";
-  return known.includes(key.split(/[/?]/)[0]) ? key : "inicio";
-}
 const navItems = [
   { to: "inicio", label: "Início" },
   { to: "pecas", label: "Peças & aplicações" },
@@ -71,8 +53,10 @@ function Brand() {
     </RouteLink>
   );
 }
-export default function App() {
-  const [routeKey, setRouteKey] = useState(resolve),
+export default function App({ initialRoute }: { initialRoute?: string }) {
+  const [routeKey, setRouteKey] = useState(
+      () => initialRoute || browserRoute(),
+    ),
     [menu, setMenu] = useState(false),
     [active, setActive] = useState<ProductPhoto | null>(null);
   const main = useRef<HTMLElement>(null),
@@ -86,36 +70,57 @@ export default function App() {
     : [];
   useEffect(() => {
     const sync = () => {
-      const key = resolve();
-      if (location.hash !== `#/${key}`)
-        history.replaceState(
-          null,
-          "",
-          `${location.pathname}${location.search}#/${key}`,
-        );
+      const key = browserRoute();
+      const destination = routeHref(key);
+      if (
+        location.hash.startsWith("#/") ||
+        `${location.pathname}${location.search}` !== destination
+      )
+        history.replaceState(null, "", destination);
       setRouteKey(key);
       setMenu(false);
       dialog.current?.close();
       window.scrollTo({ top: 0, behavior: "instant" });
     };
     sync();
+    const navigate = (event: MouseEvent) => {
+      const anchor = (event.target as Element)?.closest<HTMLAnchorElement>(
+        "a[href]",
+      );
+      if (
+        !anchor ||
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        event.altKey ||
+        anchor.target ||
+        anchor.hasAttribute("download")
+      )
+        return;
+      const url = new URL(anchor.href);
+      if (
+        url.origin !== location.origin ||
+        url.hash ||
+        !anchor.getAttribute("href")?.startsWith("/")
+      )
+        return;
+      event.preventDefault();
+      history.pushState(null, "", url.pathname + url.search);
+      sync();
+    };
     addEventListener("hashchange", sync);
-    return () => removeEventListener("hashchange", sync);
+    addEventListener("popstate", sync);
+    document.addEventListener("click", navigate);
+    return () => {
+      removeEventListener("hashchange", sync);
+      removeEventListener("popstate", sync);
+      document.removeEventListener("click", navigate);
+    };
   }, []);
   useEffect(() => {
-    const titles: Record<string, string> = {
-      inicio: "Cromação e niquelação de peças",
-      pecas: slug
-        ? productGroups.find((g) => g.slug === slug)?.name ||
-          "Peças & aplicações"
-        : "Peças & aplicações",
-      banhos: "Banhos & acabamentos",
-      processo: "Processo & cuidado",
-      "mario-reis": "Mario Reis — Nossa história",
-      empresa: "A empresa",
-      contato: "Contato e orçamento",
-    };
-    document.title = `${titles[page] || titles.inicio} | Cromeação Primos`;
+    updateSeo(routeKey);
     main.current?.focus({ preventScroll: true });
     const stopMotion = main.current
       ? observeRevealMotion(main.current)
@@ -291,7 +296,15 @@ export default function App() {
         </nav>
       </header>
       <main id="main" ref={main} tabIndex={-1} key={routeKey}>
-        {page === "inicio" ? (
+        {page === "404" ? (
+          <section className="f-page-intro f-container">
+            <h1>P?gina n?o encontrada.</h1>
+            <p>Conhe?a os servi?os e as pe?as da Primos.</p>
+            <RouteLink to="inicio" className="f-button">
+              Voltar ao in?cio
+            </RouteLink>
+          </section>
+        ) : page === "inicio" ? (
           <Home />
         ) : page === "pecas" ? (
           slug ? (
@@ -300,7 +313,7 @@ export default function App() {
             <ProductsPage />
           )
         ) : page === "banhos" ? (
-          <BathsPage />
+          <BathsPage query={routeKey.split("?")[1] || ""} />
         ) : page === "processo" ? (
           <ProcessPage />
         ) : page === "mario-reis" ? (
@@ -308,7 +321,7 @@ export default function App() {
         ) : page === "empresa" ? (
           <CompanyPage />
         ) : (
-          <ContactPage />
+          <ContactPage query={routeKey.split("?")[1] || ""} />
         )}
       </main>
       <footer className="f-footer">

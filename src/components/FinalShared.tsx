@@ -1,6 +1,7 @@
 import type { ReactNode, AnchorHTMLAttributes } from "react";
 import { business, mediaUrl, getPhoto, waLink } from "../final-data";
 import { licenses } from "../licenses";
+import { routeHref } from "../routing";
 export const Arrow = () => <span aria-hidden="true">↗</span>;
 export function RouteLink({
   to,
@@ -9,7 +10,7 @@ export function RouteLink({
   ...props
 }: Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href"> & { to: string }) {
   return (
-    <a href={`#/${to}`} className={className} {...props}>
+    <a href={routeHref(to)} className={className} {...props}>
       {children}
     </a>
   );
@@ -213,6 +214,10 @@ export function DirectContact() {
         <strong>@cromeacao_primos</strong>
         <Arrow />
       </a>
+      <p className="f-business-address">
+        Rua Frei Inocêncio, 46 — Jardim São Gabriel, São Paulo – SP. CEP
+        03940-050.
+      </p>
     </div>
   );
 }

@@ -22,11 +22,11 @@ const errors = [];
 page.on("pageerror", (e) => errors.push(e.message));
 for (const width of [390, 1440]) {
   await page.setViewportSize({ width, height: 1000 });
-  await page.goto("http://127.0.0.1:5175/#/inicio");
+  await page.goto("http://127.0.0.1:5175/inicio");
   await page.evaluate(() => document.fonts.ready);
   await page.screenshot({ path: `.playwright/final/editorial-${width}.png` });
   for (const slug of ["hastes", "canoplas", "guidoes"]) {
-    await page.goto(`http://127.0.0.1:5175/#/pecas/${slug}`);
+    await page.goto(`http://127.0.0.1:5175/pecas/${slug}`);
     assert.equal(await page.locator("canvas").count(), 0);
     await page.getByRole("button", { name: "Explorar peça em 3D" }).click();
     await expect(page.locator(".p-canvas canvas")).toBeVisible();

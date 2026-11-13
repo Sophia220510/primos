@@ -24,7 +24,7 @@ Build e TypeScript: `npm run build`. Testes: com o servidor na porta 5175, execu
 - Empresa: atuação e cinco documentos de registro, funcionamento, vistoria e segurança, de quatro órgãos, conferidos nas cópias enviadas pelo cliente.
 - Contato: WhatsApp, e-mail, Instagram e preparação de orçamento com nome da peça e banho vindos da navegação.
 
-Rotas estáticas por hash. A entrada padrão é Início. Links antigos de serviços e trabalhos redirecionam para as novas páginas. O formulário prepara o resumo; o visitante revisa e escolhe continuar no WhatsApp ou copiar. Fotos são anexadas na conversa. O material e a quantidade podem ficar desconhecidos.
+Rotas por caminho com HTML pré-renderizado para as 15 páginas. A entrada padrão é Início em `/`. Links antigos com hash, de serviços e de trabalhos continuam funcionando. O formulário prepara o resumo; o visitante revisa e escolhe continuar no WhatsApp ou copiar. Fotos são anexadas na conversa. O material e a quantidade podem ficar desconhecidos.
 
 ## Conteúdo editável
 
@@ -50,7 +50,7 @@ A apresentação usa tipografia de leitura ampliada, seções compactas, entrada
 
 O e-mail informado é cromeacaoprimos@gmail.com. O WhatsApp permanece o canal comercial já confirmado no perfil. As fotografias de peças não tiveram conteúdo alterado; apenas o fundo do retrato de Mario foi tratado com image_gen, com o original preservado e a edição documentada.
 
-Noindex mantido. Não foi configurada publicação em domínio público.
+Indexação liberada para `https://www.cromeacaoprimos.com.br`. Verificação do Search Console, títulos e descrições específicos, canonical, JSON-LD, sitemap e HTML estático: [implementação e próximos passos](docs/SEO.md).
 
 ## Verificação
 

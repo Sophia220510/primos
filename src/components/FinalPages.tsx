@@ -270,8 +270,8 @@ export function ProductDetail({
     </>
   );
 }
-export function BathsPage() {
-  const selected = new URLSearchParams(location.hash.split("?")[1]).get("tipo");
+export function BathsPage({ query = "" }: { query?: string }) {
+  const selected = new URLSearchParams(query).get("tipo");
   return (
     <>
       <PageIntro
@@ -289,7 +289,7 @@ export function BathsPage() {
         {baths.map((b) => (
           <a
             key={b.id}
-            href={`#/banhos?tipo=${b.id}`}
+            href={`/banhos?tipo=${b.id}`}
             aria-current={selected === b.id ? "true" : undefined}
           >
             {b.name}
@@ -657,8 +657,8 @@ export function CompanyPage() {
     </>
   );
 }
-export function ContactPage() {
-  const params = new URLSearchParams(location.hash.split("?")[1]);
+export function ContactPage({ query = "" }: { query?: string }) {
+  const params = new URLSearchParams(query);
   const initialGroup = productGroups.find((g) => g.slug === params.get("peca"));
   const bath = baths.find((b) => b.id === params.get("banho"));
   const [summary, setSummary] = useState(""),

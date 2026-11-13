@@ -9,7 +9,7 @@ page.on("pageerror", (e) => errors.push(e.message));
 for (const width of [360, 390, 768, 1440]) {
   await page.setViewportSize({ width, height: 1000 });
   for (const route of ["inicio", "empresa", "mario-reis"]) {
-    await page.goto(`http://127.0.0.1:5175/#/${route}`);
+    await page.goto(`http://127.0.0.1:5175/${route}`);
     const section = page.locator(".f-licenses");
     await expect(section.locator("h2")).toHaveText(/Licenças e autorizações\./);
     await expect(section.locator(".f-license-list>div")).toHaveCount(5);
@@ -43,13 +43,13 @@ for (const width of [360, 390, 768, 1440]) {
     `${width}px: tipos de licença sem datas, biografia corrigida e sem overflow.`,
   );
 }
-await page.goto("http://127.0.0.1:5175/#/inicio");
+await page.goto("http://127.0.0.1:5175/inicio");
 await expect(page.locator("h1")).toContainText("Cada peça importa");
 await expect(page.locator(".r-hero-facts")).toContainText("Mario Reis");
 await expect(page.locator(".r-introduction")).toContainText(
   "mercado desde 2002",
 );
-await page.goto("http://127.0.0.1:5175/#/pecas/outras-pecas");
+await page.goto("http://127.0.0.1:5175/pecas/outras-pecas");
 await expect(page.locator("h1")).toContainText("Molas");
 await expect(page.locator('img[src*="outras-pecas-1"]')).toHaveCount(0);
 await expect(page.locator(".f-detail-photo")).toHaveCount(1);

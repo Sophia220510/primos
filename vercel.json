@@ -1,0 +1,41 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/pecas", "destination": "/pecas.html" },
+    { "source": "/banhos", "destination": "/banhos.html" },
+    { "source": "/processo", "destination": "/processo.html" },
+    { "source": "/mario-reis", "destination": "/mario-reis.html" },
+    { "source": "/empresa", "destination": "/empresa.html" },
+    { "source": "/contato", "destination": "/contato.html" },
+    { "source": "/pecas/hastes", "destination": "/pecas/hastes.html" },
+    { "source": "/pecas/pesos", "destination": "/pecas/pesos.html" },
+    { "source": "/pecas/dobradicas", "destination": "/pecas/dobradicas.html" },
+    { "source": "/pecas/torneiras", "destination": "/pecas/torneiras.html" },
+    { "source": "/pecas/canoplas", "destination": "/pecas/canoplas.html" },
+    { "source": "/pecas/flexiveis", "destination": "/pecas/flexiveis.html" },
+    { "source": "/pecas/guidoes", "destination": "/pecas/guidoes.html" },
+    {
+      "source": "/pecas/outras-pecas",
+      "destination": "/pecas/outras-pecas.html"
+    }
+  ],
+  "redirects": [
+    { "source": "/index.html", "destination": "/", "permanent": true },
+    { "source": "/inicio", "destination": "/", "permanent": true },
+    { "source": "/servicos", "destination": "/banhos", "permanent": true },
+    { "source": "/trabalhos", "destination": "/pecas", "permanent": true },
+    {
+      "source": "/cromacao",
+      "destination": "/banhos?tipo=cromacao",
+      "permanent": true
+    },
+    {
+      "source": "/niquelacao",
+      "destination": "/banhos?tipo=niquelacao",
+      "permanent": true
+    }
+  ]
+}

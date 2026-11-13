@@ -33,4 +33,4 @@ O prompt integral está em PROMPT-RETRATO.md. A edição do fundo não represent
 
 O conteúdo final apresenta somente cromação e niquelação, inclusive no formulário. A página de processo explica avaliação, preparação/limpeza, organização para o banho, deposição do revestimento, lavagem/secagem e conferência. Fotografias reais de peças acompanham a explicação; elas não são tratadas como provas de equipamentos ou de uma linha química completa. Os PDFs de comprovantes não são publicados, conforme orientação expressa do cliente.
 
-O noindex foi mantido. A atualização do código no GitHub não equivale a publicação em domínio público.
+A etapa posterior de Search Console e publicação liberou a indexação no domínio `https://www.cromeacaoprimos.com.br`. Detalhes em SEO.md.

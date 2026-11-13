@@ -41,7 +41,7 @@ page.on("console", (m) => {
 for (const width of [360, 390, 768, 1440]) {
   await page.setViewportSize({ width, height: 1000 });
   for (const route of routes) {
-    await page.goto(`http://127.0.0.1:5175/#/${route}`);
+    await page.goto(`http://127.0.0.1:5175/${route}`);
     await page.evaluate(() => document.fonts.ready);
     await expect(page.locator("h1")).toHaveCount(1);
     assert(
@@ -61,7 +61,7 @@ for (const width of [360, 390, 768, 1440]) {
       `${width}px ${route}: overflow after images`,
     );
   }
-  await page.goto("http://127.0.0.1:5175/#/pecas");
+  await page.goto("http://127.0.0.1:5175/pecas");
   await expect(page.locator(".r-catalog-item")).toHaveCount(8);
   await page.getByRole("button", { name: "Para panelas", exact: true }).click();
   await expect(page.locator(".r-catalog-item")).toHaveCount(2);
@@ -81,7 +81,7 @@ for (const width of [360, 390, 768, 1440]) {
     .click();
   await expect(page.locator(".r-catalog-item")).toHaveCount(8);
   await page.goto("http://127.0.0.1:5175/");
-  await page.waitForURL("**/#/inicio");
+  await page.waitForURL("**/");
   await expect(
     page.locator('nav[aria-label="Navegação principal"] a[aria-current]'),
   ).toHaveText("Início");
@@ -108,7 +108,7 @@ for (const width of [360, 390, 768, 1440]) {
   await expect(page.locator(".r-finish-element strong")).toHaveText("Ni");
   await expect(page.locator(".r-finish-copy .f-button")).toHaveAttribute(
     "href",
-    "#/banhos?tipo=niquelacao",
+    "/banhos?tipo=niquelacao",
   );
   await page.getByRole("button", { name: "Cromação", exact: true }).click();
   await expect(page.locator(".r-finish-element strong")).toHaveText("Cr");
@@ -132,7 +132,7 @@ for (const width of [360, 390, 768, 1440]) {
       .getByRole("navigation", { name: "Navegação principal" })
       .getByRole("link", { name: "Mario Reis", exact: true })
       .click();
-    await page.waitForURL("**/#/mario-reis");
+    await page.waitForURL("**/mario-reis");
     await expect(page.locator(".f-menu-toggle")).toHaveAttribute(
       "aria-expanded",
       "false",
@@ -148,13 +148,13 @@ for (const width of [360, 390, 768, 1440]) {
       .getByRole("navigation", { name: "Navegação principal" })
       .getByRole("link", { name: "Mario Reis", exact: true })
       .click();
-    await page.waitForURL("**/#/mario-reis");
+    await page.waitForURL("**/mario-reis");
   }
   for (const year of ["1979", "1983", "Hoje"])
     await expect(
       page.locator(".f-timeline article>span").filter({ hasText: year }),
     ).toBeVisible();
-  await page.goto("http://127.0.0.1:5175/#/pecas/hastes");
+  await page.goto("http://127.0.0.1:5175/pecas/hastes");
   const trigger = page.getByRole("button", {
     name: "Ampliar Hastes de panela, foto 1",
     exact: true,
@@ -181,7 +181,7 @@ for (const width of [360, 390, 768, 1440]) {
   await page
     .getByRole("link", { name: "Orçar hastes de panela", exact: true })
     .click();
-  await page.waitForURL("**/#/contato?peca=hastes");
+  await page.waitForURL("**/contato?peca=hastes");
   await expect(page.locator("#piece")).toHaveValue("Hastes de panela");
   await page.locator("#name").fill("José & teste");
   await page.locator("#quantity").fill("100");
@@ -215,7 +215,7 @@ for (const width of [360, 390, 768, 1440]) {
       .first()
       .evaluate((e) => e.open),
   );
-  await page.goto("http://127.0.0.1:5175/#/contato");
+  await page.goto("http://127.0.0.1:5175/contato");
   assert.deepEqual(await page.locator("#bath option").allTextContents(), [
     "Preciso de orientação",
     "Cromação",
@@ -232,7 +232,7 @@ for (const width of [360, 390, 768, 1440]) {
       "Quantidade: A informar",
     ),
   );
-  await page.goto("http://127.0.0.1:5175/#/processo");
+  await page.goto("http://127.0.0.1:5175/processo");
   await expect(page.locator(".f-process-list>li")).toHaveCount(6);
   await expect(page.locator(".f-process-steps")).toContainText(
     "Preparação e limpeza",
@@ -240,13 +240,13 @@ for (const width of [360, 390, 768, 1440]) {
   await expect(page.locator(".f-process-steps")).toContainText(
     "Lavagem e secagem",
   );
-  await page.goto("http://127.0.0.1:5175/#/banhos");
+  await page.goto("http://127.0.0.1:5175/banhos");
   await expect(page.locator(".f-bath-feature")).toHaveCount(2);
   await expect(page.getByRole("table")).toBeVisible();
   await page
     .getByRole("link", { name: "Pedir orçamento de niquelação", exact: true })
     .click();
-  await page.waitForURL("**/#/contato?banho=niquelacao");
+  await page.waitForURL("**/contato?banho=niquelacao");
   await expect(page.locator("#bath")).toHaveValue("Niquelação");
   for (const route of [
     "inicio",
@@ -256,7 +256,7 @@ for (const width of [360, 390, 768, 1440]) {
     "banhos",
     "processo",
   ]) {
-    await page.goto(`http://127.0.0.1:5175/#/${route}`);
+    await page.goto(`http://127.0.0.1:5175/${route}`);
     await page.evaluate(() => document.fonts.ready);
     for (const img of await page.locator("main img").all()) {
       await img.scrollIntoViewIfNeeded();
@@ -272,10 +272,10 @@ for (const width of [360, 390, 768, 1440]) {
     `${width}px: 15 páginas, fotos, vitrine, menu, biografia, modal/foco, orçamento contextual, WhatsApp, cópia, e-mail e FAQ OK.`,
   );
 }
-await page.goto("http://127.0.0.1:5175/#/servicos");
-await page.waitForURL("**/#/banhos");
-await page.goto("http://127.0.0.1:5175/#/trabalhos");
-await page.waitForURL("**/#/pecas");
+await page.goto("http://127.0.0.1:5175/servicos");
+await page.waitForURL("**/banhos");
+await page.goto("http://127.0.0.1:5175/trabalhos");
+await page.waitForURL("**/pecas");
 const moving = await browser.newPage({
   viewport: { width: 1440, height: 1000 },
   reducedMotion: "no-preference",
@@ -287,7 +287,7 @@ await moving.addInitScript(() => {
     return animate.apply(this, args);
   };
 });
-await moving.goto("http://127.0.0.1:5175/#/inicio");
+await moving.goto("http://127.0.0.1:5175/inicio");
 await moving.waitForTimeout(1000);
 assert.notEqual(
   await moving.locator("h1").evaluate((e) => getComputedStyle(e).animationName),
