@@ -67,6 +67,12 @@ export function getSeo(routeKey: string) {
     image: `${SITE_URL}/media/instagram/04.webp`,
     logo: `${SITE_URL}/media/instagram/00.webp`,
     sameAs: [business.instagram],
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: business.opens,
+      closes: business.closes,
+    },
     address: {
       "@type": "PostalAddress",
       streetAddress: "Rua Frei Inocêncio, 46",

@@ -199,6 +199,10 @@ export function FounderPreview() {
 export function DirectContact() {
   return (
     <div className="f-direct-contact">
+      <p className="f-business-address">
+        <strong>Horário de atendimento</strong><br />
+        {business.hours}
+      </p>
       <a href={waLink()} target="_blank" rel="noopener noreferrer">
         <span>WhatsApp comercial</span>
         <strong>{business.phone}</strong>

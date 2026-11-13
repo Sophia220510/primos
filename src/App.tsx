@@ -340,6 +340,7 @@ export default function App({ initialRoute }: { initialRoute?: string }) {
           <div className="f-footer-columns">
             <div>
               <EyebrowFooter>CONTATO</EyebrowFooter>
+              <span>{business.hours}</span>
               <a href={waLink()} target="_blank" rel="noopener noreferrer">
                 {business.phone}
               </a>
