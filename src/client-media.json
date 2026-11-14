@@ -5,8 +5,8 @@
       "name": "Parafusos",
       "caption": "Acabamento para peças de fixação",
       "description": "Cromação e niquelação de parafusos, conforme o material e a aplicação. Envie fotos, medidas, quantidade e o acabamento desejado para avaliar o seu pedido em unidades ou lotes.",
-      "cover": "parafusos-ilustracao",
-      "count": 0
+      "cover": "parafusos-1",
+      "count": 3
     },
     {
       "slug": "hastes",
@@ -74,6 +74,39 @@
     }
   ],
   "photos": [
+    {
+      "id": "parafusos-1",
+      "category": "parafusos",
+      "title": "Parafusos",
+      "src": "media/cliente/parafusos-1.webp",
+      "small": "media/cliente/parafusos-1-640.webp",
+      "width": 1086,
+      "height": 1448,
+      "alt": "Lote de parafusos com acabamento da Cromeação Primos, em fotografia real.",
+      "kind": "real"
+    },
+    {
+      "id": "parafusos-2",
+      "category": "parafusos",
+      "title": "Parafuso em detalhe",
+      "src": "media/cliente/parafusos-2.webp",
+      "small": "media/cliente/parafusos-2-640.webp",
+      "width": 1086,
+      "height": 1448,
+      "alt": "Detalhe de parafuso junto ao lote na Cromeação Primos, em fotografia real.",
+      "kind": "real"
+    },
+    {
+      "id": "parafusos-3",
+      "category": "parafusos",
+      "title": "Parafusos em lote",
+      "src": "media/cliente/parafusos-3.webp",
+      "small": "media/cliente/parafusos-3-640.webp",
+      "width": 1086,
+      "height": 1448,
+      "alt": "Vista do lote de parafusos na caixa da Cromeação Primos, em fotografia real.",
+      "kind": "real"
+    },
     {
       "id": "hastes-1",
       "category": "hastes",
