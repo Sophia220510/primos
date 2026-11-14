@@ -50,6 +50,11 @@ export function ProductImage({
   className?: string;
   sizes?: string;
 }) {
+  if (id === "parafusos-ilustracao") return (
+    <img src={mediaUrl("media/parafusos-ilustracao.svg")} width={900} height={1200}
+      alt="Ilustração de parafusos; consulte o acabamento da sua peça." className={className}
+      loading={priority ? "eager" : "lazy"} />
+  );
   const p = getPhoto(id);
   return (
     <img

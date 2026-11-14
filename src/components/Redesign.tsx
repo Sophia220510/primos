@@ -187,7 +187,7 @@ const filters = [
   { label: "Metais sanitários", slugs: ["torneiras", "canoplas", "flexiveis"] },
   {
     label: "Outros componentes",
-    slugs: ["dobradicas", "guidoes", "outras-pecas"],
+    slugs: ["parafusos", "dobradicas", "guidoes", "outras-pecas"],
   },
 ];
 export function Collection({ featured = false }: { featured?: boolean }) {

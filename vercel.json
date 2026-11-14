@@ -4,6 +4,7 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "rewrites": [
+    { "source": "/pecas/parafusos", "destination": "/pecas/parafusos.html" },
     { "source": "/pecas", "destination": "/pecas.html" },
     { "source": "/banhos", "destination": "/banhos.html" },
     { "source": "/processo", "destination": "/processo.html" },

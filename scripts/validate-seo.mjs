@@ -6,8 +6,9 @@ import { chromium, expect } from "@playwright/test";
 const origin = "https://www.cromeacaoprimos.com.br";
 const sitemap = await fs.readFile("dist/sitemap.xml", "utf8");
 const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1]);
-assert.equal(urls.length, 15);
-assert.equal(new Set(urls).size, 15);
+assert.equal(urls.length, 16);
+assert.equal(new Set(urls).size, 16);
+assert(urls.includes(`${origin}/pecas/parafusos`));
 const titles = new Set(),
   descriptions = new Set();
 for (const url of urls) {
@@ -126,7 +127,7 @@ try {
   await expect(interactive.locator("h1")).toContainText("Mario Reis");
   assert.deepEqual(errors, []);
   console.log(
-    "SEO: 15 pages with pre-rendered content, unique metadata, schemas, canonical, sitemap, verification, no-JS access, hydration, navigation/back, legacy hashes and HTTP 404 passed.",
+    "SEO: 16 pages with pre-rendered content, unique metadata, schemas, canonical, sitemap, verification, no-JS access, hydration, navigation/back, legacy hashes and HTTP 404 passed.",
   );
 } finally {
   await browser.close();

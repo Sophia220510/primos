@@ -1,6 +1,14 @@
 {
   "groups": [
     {
+      "slug": "parafusos",
+      "name": "Parafusos",
+      "caption": "Acabamento para peças de fixação",
+      "description": "Cromação e niquelação de parafusos, conforme o material e a aplicação. Envie fotos, medidas, quantidade e o acabamento desejado para avaliar o seu pedido em unidades ou lotes.",
+      "cover": "parafusos-ilustracao",
+      "count": 0
+    },
+    {
       "slug": "hastes",
       "name": "Hastes de panela",
       "caption": "Especialistas em hastes de panela",

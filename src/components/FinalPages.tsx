@@ -211,6 +211,10 @@ export function ProductDetail({
       )}
       <section className="f-product-detail f-container">
         <div className="f-product-detail-gallery">
+          {slug === "parafusos" && <figure className="f-detail-photo">
+            <ProductImage id={group.cover} priority />
+            <figcaption>Ilustração de referência. Envie fotos dos seus parafusos para avaliação.</figcaption>
+          </figure>}
           {photos.map((p, i) => (
             <button
               className="f-detail-photo f-reveal"
